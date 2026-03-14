@@ -1013,7 +1013,7 @@
       gap: 8px;
     }
 
-    .cart-icon {
+    .icon {
       width: 18px;
       height: 18px;
       display: inline-flex;
@@ -1022,9 +1022,9 @@
       flex: 0 0 auto;
     }
 
-    .cart-icon svg {
-      width: 18px;
-      height: 18px;
+    .icon svg {
+      width: 100%;
+      height: 100%;
       stroke: currentColor;
       fill: none;
       stroke-width: 2;
@@ -1033,24 +1033,9 @@
       display: block;
     }
 
-    .mobile-cart-icon {
+    .icon-sm {
       width: 16px;
       height: 16px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      flex: 0 0 auto;
-    }
-
-    .mobile-cart-icon svg {
-      width: 16px;
-      height: 16px;
-      stroke: currentColor;
-      fill: none;
-      stroke-width: 2;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      display: block;
     }
 
     @media (max-width: 1080px) {
@@ -1127,6 +1112,14 @@
   </style>
 </head>
 <body>
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;" aria-hidden="true">
+    <symbol id="icon-cart" viewBox="0 0 24 24">
+      <circle cx="9" cy="20" r="1.5"></circle>
+      <circle cx="18" cy="20" r="1.5"></circle>
+      <path d="M3 4h2l2.2 10.2a1 1 0 0 0 1 .8h8.9a1 1 0 0 0 1-.8L20 8H7"></path>
+    </symbol>
+  </svg>
+
   <div class="topbar">
     <div class="container topbar-inner">
       <span>地址：彩雲一邨二期街市3號鋪</span>
@@ -1151,11 +1144,9 @@
         <a href="#about">關於我們</a>
         <a href="#services">服務項目</a>
         <a href="#shop" class="shop-anchor-btn cart-nav-link">
-          <span class="cart-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <circle cx="9" cy="20" r="1.5"></circle>
-              <circle cx="18" cy="20" r="1.5"></circle>
-              <path d="M3 4h2l2.2 10.2a1 1 0 0 0 1 .8h8.9a1 1 0 0 0 1-.8L20 8H7"></path>
+          <span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <use href="#icon-cart"></use>
             </svg>
           </span>
           <span>產品選購</span>
@@ -1168,11 +1159,9 @@
 
       <div class="nav-cta">
         <a href="#shop" class="btn btn-secondary desktop-only">
-          <span class="cart-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <circle cx="9" cy="20" r="1.5"></circle>
-              <circle cx="18" cy="20" r="1.5"></circle>
-              <path d="M3 4h2l2.2 10.2a1 1 0 0 0 1 .8h8.9a1 1 0 0 0 1-.8L20 8H7"></path>
+          <span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <use href="#icon-cart"></use>
             </svg>
           </span>
           查看產品
@@ -1196,11 +1185,9 @@
 
           <div class="cta-group">
             <a href="#shop" class="btn btn-primary">
-              <span class="cart-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <circle cx="9" cy="20" r="1.5"></circle>
-                  <circle cx="18" cy="20" r="1.5"></circle>
-                  <path d="M3 4h2l2.2 10.2a1 1 0 0 0 1 .8h8.9a1 1 0 0 0 1-.8L20 8H7"></path>
+              <span class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <use href="#icon-cart"></use>
                 </svg>
               </span>
               立即選購產品
@@ -1246,11 +1233,9 @@
 
           <div class="cta-group">
             <a href="#shop" class="btn btn-primary">
-              <span class="cart-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <circle cx="9" cy="20" r="1.5"></circle>
-                  <circle cx="18" cy="20" r="1.5"></circle>
-                  <path d="M3 4h2l2.2 10.2a1 1 0 0 0 1 .8h8.9a1 1 0 0 0 1-.8L20 8H7"></path>
+              <span class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <use href="#icon-cart"></use>
                 </svg>
               </span>
               產品選購
@@ -1287,11 +1272,9 @@
             <div class="cta-group">
               <a href="#services" class="btn btn-outline">了解服務項目</a>
               <a href="#shop" class="btn btn-primary">
-                <span class="cart-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <circle cx="9" cy="20" r="1.5"></circle>
-                    <circle cx="18" cy="20" r="1.5"></circle>
-                    <path d="M3 4h2l2.2 10.2a1 1 0 0 0 1 .8h8.9a1 1 0 0 0 1-.8L20 8H7"></path>
+                <span class="icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <use href="#icon-cart"></use>
                   </svg>
                 </span>
                 查看產品價格
@@ -1409,11 +1392,9 @@
 
         <div class="cta-group">
           <a href="#shop" class="btn btn-outline">
-            <span class="cart-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <circle cx="9" cy="20" r="1.5"></circle>
-                <circle cx="18" cy="20" r="1.5"></circle>
-                <path d="M3 4h2l2.2 10.2a1 1 0 0 0 1 .8h8.9a1 1 0 0 0 1-.8L20 8H7"></path>
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <use href="#icon-cart"></use>
               </svg>
             </span>
             查看產品選購
@@ -1548,11 +1529,9 @@
         <div class="cta-group">
           <a href="tel:27505710" class="btn btn-primary">立即致電查詢</a>
           <a href="#shop" class="btn btn-outline">
-            <span class="cart-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <circle cx="9" cy="20" r="1.5"></circle>
-                <circle cx="18" cy="20" r="1.5"></circle>
-                <path d="M3 4h2l2.2 10.2a1 1 0 0 0 1 .8h8.9a1 1 0 0 0 1-.8L20 8H7"></path>
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <use href="#icon-cart"></use>
               </svg>
             </span>
             查看產品價格
@@ -1596,11 +1575,9 @@
 
         <div class="cta-group">
           <a href="#shop" class="btn btn-whatsapp">
-            <span class="cart-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <circle cx="9" cy="20" r="1.5"></circle>
-                <circle cx="18" cy="20" r="1.5"></circle>
-                <path d="M3 4h2l2.2 10.2a1 1 0 0 0 1 .8h8.9a1 1 0 0 0 1-.8L20 8H7"></path>
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <use href="#icon-cart"></use>
               </svg>
             </span>
             立即用購物車查詢
@@ -1681,11 +1658,9 @@
         <div class="cta-group">
           <a href="#contact" class="btn btn-outline">查看聯絡方式</a>
           <a href="#shop" class="btn btn-gold">
-            <span class="cart-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <circle cx="9" cy="20" r="1.5"></circle>
-                <circle cx="18" cy="20" r="1.5"></circle>
-                <path d="M3 4h2l2.2 10.2a1 1 0 0 0 1 .8h8.9a1 1 0 0 0 1-.8L20 8H7"></path>
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <use href="#icon-cart"></use>
               </svg>
             </span>
             先看產品
@@ -1794,11 +1769,9 @@
               <a href="tel:27505710" class="btn btn-primary">立即致電</a>
               <button class="btn btn-whatsapp" onclick="checkoutWhatsApp()">WhatsApp 下單</button>
               <a href="#shop" class="btn btn-secondary">
-                <span class="cart-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <circle cx="9" cy="20" r="1.5"></circle>
-                    <circle cx="18" cy="20" r="1.5"></circle>
-                    <path d="M3 4h2l2.2 10.2a1 1 0 0 0 1 .8h8.9a1 1 0 0 0 1-.8L20 8H7"></path>
+                <span class="icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <use href="#icon-cart"></use>
                   </svg>
                 </span>
                 查看產品
@@ -1920,11 +1893,9 @@
             <a href="tel:27505710" class="btn btn-secondary">致電</a>
             <button class="btn btn-whatsapp" onclick="checkoutWhatsApp()">WhatsApp</button>
             <a href="#shop" class="btn btn-secondary">
-              <span class="cart-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <circle cx="9" cy="20" r="1.5"></circle>
-                  <circle cx="18" cy="20" r="1.5"></circle>
-                  <path d="M3 4h2l2.2 10.2a1 1 0 0 0 1 .8h8.9a1 1 0 0 0 1-.8L20 8H7"></path>
+              <span class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <use href="#icon-cart"></use>
                 </svg>
               </span>
               產品
@@ -1968,11 +1939,9 @@
   <div class="mobile-fixed-bar">
     <a href="tel:27505710" class="fixed-btn call">致電</a>
     <a href="#shop" class="fixed-btn cart">
-      <span class="mobile-cart-icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <circle cx="9" cy="20" r="1.5"></circle>
-          <circle cx="18" cy="20" r="1.5"></circle>
-          <path d="M3 4h2l2.2 10.2a1 1 0 0 0 1 .8h8.9a1 1 0 0 0 1-.8L20 8H7"></path>
+      <span class="icon icon-sm" aria-hidden="true">
+        <svg viewBox="0 0 24 24">
+          <use href="#icon-cart"></use>
         </svg>
       </span>
       購物車
