@@ -16,18 +16,28 @@
   <style>
     :root {
       --green: #1f4d3a;
-      --green-dark: #17382b;
+      --green-dark: #163528;
+      --green-deep: #10271e;
       --green-soft: #2d6a4f;
       --gold: #c6923c;
       --gold-dark: #a97822;
-      --bg: #f7f4ee;
+      --gold-soft: #e7c98c;
+      --bg: #f6f1e8;
       --bg-soft: #fcfbf8;
+      --bg-deep: #f2ece2;
       --text: #223127;
-      --text-soft: #5b665f;
+      --text-soft: #647067;
+      --text-faint: #8a948d;
       --white: #ffffff;
-      --border: #e6dfd0;
-      --shadow: 0 10px 30px rgba(31, 77, 58, 0.08);
-      --radius: 18px;
+      --border: rgba(198, 187, 164, 0.42);
+      --border-strong: rgba(198, 187, 164, 0.62);
+      --shadow-xs: 0 4px 10px rgba(16, 39, 30, 0.04);
+      --shadow-sm: 0 8px 24px rgba(16, 39, 30, 0.06);
+      --shadow: 0 18px 50px rgba(16, 39, 30, 0.08);
+      --shadow-lg: 0 26px 70px rgba(16, 39, 30, 0.12);
+      --radius-sm: 14px;
+      --radius: 20px;
+      --radius-lg: 28px;
       --max: 1180px;
       --danger: #c85b5b;
       --wa: #25d366;
@@ -45,8 +55,12 @@
       margin: 0;
       font-family: Arial, "PingFang TC", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
       color: var(--text);
-      background: var(--bg-soft);
-      line-height: 1.7;
+      background:
+        radial-gradient(circle at top right, rgba(198, 146, 60, 0.08), transparent 24%),
+        radial-gradient(circle at left top, rgba(31, 77, 58, 0.05), transparent 28%),
+        linear-gradient(180deg, #fcfbf8 0%, #f5efe6 100%);
+      line-height: 1.75;
+      letter-spacing: 0.01em;
     }
 
     a {
@@ -59,6 +73,13 @@
       display: block;
     }
 
+    button,
+    input,
+    textarea,
+    select {
+      font: inherit;
+    }
+
     .container {
       width: calc(100% - 32px);
       max-width: var(--max);
@@ -66,15 +87,16 @@
     }
 
     .topbar {
-      background: var(--green);
-      color: #f4f7f5;
-      font-size: 14px;
+      background: linear-gradient(90deg, var(--green-deep), var(--green));
+      color: rgba(255,255,255,0.92);
+      font-size: 13px;
+      letter-spacing: 0.02em;
     }
 
     .topbar-inner {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px 20px;
+      gap: 10px 18px;
       justify-content: center;
       align-items: center;
       padding: 10px 0;
@@ -82,16 +104,26 @@
     }
 
     .topbar a {
-      color: #f4f7f5;
+      color: rgba(255,255,255,0.95);
+    }
+
+    .navbar-wrap {
+      position: sticky;
+      top: 10px;
+      z-index: 1000;
+      padding-top: 12px;
     }
 
     .navbar {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(252, 251, 248, 0.96);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(230, 223, 208, 0.8);
+      width: calc(100% - 16px);
+      max-width: calc(var(--max) + 16px);
+      margin: 0 auto;
+      background: rgba(252, 251, 248, 0.82);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(230, 223, 208, 0.75);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
     }
 
     .nav-inner {
@@ -100,6 +132,7 @@
       justify-content: space-between;
       gap: 20px;
       min-height: 74px;
+      padding: 0 18px;
     }
 
     .brand {
@@ -112,14 +145,24 @@
     .brand-mark {
       width: 42px;
       height: 42px;
-      border-radius: 12px;
+      border-radius: 14px;
       background: linear-gradient(135deg, var(--green) 0%, var(--green-soft) 100%);
       color: var(--white);
       display: grid;
       place-items: center;
-      font-weight: 700;
-      box-shadow: var(--shadow);
+      font-weight: 800;
+      font-size: 15px;
+      box-shadow: 0 10px 20px rgba(31, 77, 58, 0.18);
       flex: 0 0 auto;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .brand-mark::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(255,255,255,0.18), rgba(255,255,255,0));
     }
 
     .brand-text {
@@ -130,22 +173,54 @@
       font-size: 16px;
       font-weight: 800;
       line-height: 1.2;
+      letter-spacing: 0.01em;
     }
 
     .brand-sub {
       font-size: 11px;
-      color: var(--text-soft);
+      color: var(--text-faint);
     }
 
     .nav-menu {
       display: flex;
       align-items: center;
-      gap: 26px;
-      font-size: 16px;
+      gap: 24px;
+      font-size: 15px;
       color: var(--text-soft);
     }
 
+    .nav-menu a {
+      position: relative;
+      font-weight: 700;
+      transition: color 0.25s ease;
+      padding: 6px 0;
+      white-space: nowrap;
+    }
+
+    .nav-menu a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -3px;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--gold), var(--green));
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 0.25s ease;
+    }
+
     .nav-menu a:hover {
+      color: var(--green);
+    }
+
+    .nav-menu a:hover::after,
+    .nav-menu a.active::after {
+      transform: scaleX(1);
+    }
+
+    .nav-menu a.active {
       color: var(--green);
     }
 
@@ -156,66 +231,145 @@
       flex-wrap: wrap;
     }
 
+    .menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      border: 1px solid rgba(31, 77, 58, 0.14);
+      background: rgba(255,255,255,0.85);
+      color: var(--green);
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-xs);
+    }
+
+    .menu-toggle svg {
+      width: 20px;
+      height: 20px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .mobile-menu {
+      display: none;
+      border-top: 1px solid rgba(230, 223, 208, 0.8);
+      padding: 8px 14px 16px;
+    }
+
+    .mobile-menu.open {
+      display: block;
+    }
+
+    .mobile-menu-links {
+      display: grid;
+      gap: 8px;
+      padding-top: 8px;
+    }
+
+    .mobile-menu-links a,
+    .mobile-menu-links button {
+      width: 100%;
+      justify-content: flex-start;
+    }
+
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
-      padding: 12px 18px;
+      min-height: 44px;
+      padding: 0 18px;
       border-radius: 12px;
-      font-weight: 700;
-      border: none;
+      font-weight: 800;
+      font-size: 14px;
+      border: 1px solid transparent;
       cursor: pointer;
-      transition: transform 0.2s ease, opacity 0.2s ease, background 0.2s ease;
+      transition:
+        transform 0.2s ease,
+        opacity 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
       text-align: center;
+      box-shadow: var(--shadow-xs);
     }
 
     .btn:hover {
       transform: translateY(-1px);
-      opacity: 0.95;
+      opacity: 0.98;
     }
 
     .btn-primary {
-      background: var(--green);
+      background: linear-gradient(135deg, var(--green) 0%, var(--green-soft) 100%);
       color: var(--white);
+      box-shadow: 0 12px 24px rgba(31, 77, 58, 0.18);
     }
 
     .btn-secondary {
-      background: #eef5f1;
+      background: rgba(255,255,255,0.72);
       color: var(--green);
-      border: 1px solid #d5e4dc;
+      border: 1px solid rgba(31, 77, 58, 0.12);
     }
 
     .btn-gold {
-      background: var(--gold);
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
       color: var(--white);
+      box-shadow: 0 12px 24px rgba(198, 146, 60, 0.18);
     }
 
     .btn-whatsapp {
-      background: #25d366;
+      background: linear-gradient(135deg, #25d366 0%, #18b652 100%);
       color: var(--white);
+      box-shadow: 0 12px 24px rgba(37, 211, 102, 0.18);
     }
 
     .btn-outline {
       background: transparent;
       color: var(--green);
-      border: 1px solid var(--green);
+      border: 1px solid rgba(31, 77, 58, 0.24);
     }
 
     .hero {
       position: relative;
       overflow: hidden;
       background:
-        radial-gradient(circle at top right, rgba(198, 146, 60, 0.14), transparent 28%),
-        radial-gradient(circle at left center, rgba(31, 77, 58, 0.08), transparent 32%),
-        linear-gradient(180deg, #fcfbf8 0%, #f6f2ea 100%);
-      padding: 64px 0 36px;
+        radial-gradient(circle at top right, rgba(198, 146, 60, 0.18), transparent 26%),
+        radial-gradient(circle at left center, rgba(31, 77, 58, 0.07), transparent 30%),
+        linear-gradient(180deg, #fcfbf8 0%, #f3ede3 100%);
+      padding: 88px 0 54px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -80px;
+      right: -80px;
+      width: 240px;
+      height: 240px;
+      background: radial-gradient(circle, rgba(198,146,60,0.16), transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      left: -100px;
+      bottom: -80px;
+      width: 260px;
+      height: 260px;
+      background: radial-gradient(circle, rgba(31,77,58,0.08), transparent 72%);
+      pointer-events: none;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 28px;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 30px;
       align-items: center;
     }
 
@@ -223,27 +377,29 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: #edf5f1;
+      background: rgba(255,255,255,0.72);
       color: var(--green);
-      border: 1px solid #d8e8df;
-      padding: 8px 12px;
+      border: 1px solid rgba(31, 77, 58, 0.12);
+      padding: 8px 14px;
       border-radius: 999px;
       font-size: 13px;
-      font-weight: 700;
-      margin-bottom: 16px;
+      font-weight: 800;
+      margin-bottom: 18px;
+      box-shadow: var(--shadow-xs);
     }
 
     h1 {
-      font-size: clamp(32px, 5vw, 56px);
-      line-height: 1.18;
-      margin: 0 0 18px;
-      letter-spacing: -0.02em;
+      font-size: clamp(34px, 5vw, 60px);
+      line-height: 1.12;
+      margin: 0 0 20px;
+      letter-spacing: -0.03em;
     }
 
     .hero p.lead {
       font-size: 18px;
       color: var(--text-soft);
-      margin: 0 0 24px;
+      margin: 0 0 26px;
+      max-width: 700px;
     }
 
     .cta-group {
@@ -257,30 +413,100 @@
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin-top: 20px;
+      margin-top: 22px;
     }
 
     .tag {
-      background: rgba(255, 255, 255, 0.78);
+      background: rgba(255, 255, 255, 0.85);
       border: 1px solid var(--border);
       padding: 8px 12px;
       border-radius: 999px;
       font-size: 13px;
       color: var(--text-soft);
-      box-shadow: 0 4px 14px rgba(0,0,0,0.03);
+      box-shadow: var(--shadow-xs);
+    }
+
+    .hero-visual {
+      display: grid;
+      gap: 20px;
+    }
+
+    .hero-photo {
+      min-height: 260px;
+      border-radius: 28px;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(140deg, rgba(16,39,30,0.88) 0%, rgba(31,77,58,0.78) 48%, rgba(198,146,60,0.62) 100%);
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(255,255,255,0.35);
+      padding: 28px;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .hero-photo::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 22%, rgba(255,255,255,0.12), transparent 18%),
+        radial-gradient(circle at 80% 18%, rgba(255,255,255,0.10), transparent 18%),
+        radial-gradient(circle at 70% 80%, rgba(255,255,255,0.08), transparent 22%);
+      pointer-events: none;
+    }
+
+    .hero-photo::after {
+      content: "";
+      position: absolute;
+      inset: auto -30px -30px auto;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,0.12), transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-photo-content {
+      position: relative;
+      z-index: 1;
+      color: rgba(255,255,255,0.96);
+      max-width: 420px;
+    }
+
+    .hero-photo-title {
+      font-size: 30px;
+      font-weight: 800;
+      line-height: 1.2;
+      margin: 0 0 10px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-photo-text {
+      margin: 0;
+      color: rgba(255,255,255,0.84);
+      font-size: 15px;
+    }
+
+    .hero-card,
+    .card,
+    details {
+      background: rgba(255,255,255,0.84);
+      border: 1px solid rgba(230,223,208,0.92);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
     }
 
     .hero-card {
-      background: rgba(255,255,255,0.82);
-      border: 1px solid rgba(230,223,208,0.9);
-      border-radius: 24px;
-      padding: 24px;
-      box-shadow: var(--shadow);
+      padding: 28px;
     }
 
     .hero-card h3 {
-      margin: 0 0 14px;
-      font-size: 24px;
+      margin: 0 0 16px;
+      font-size: 26px;
+      letter-spacing: -0.01em;
     }
 
     .info-list {
@@ -292,7 +518,7 @@
       display: grid;
       gap: 4px;
       padding-bottom: 12px;
-      border-bottom: 1px dashed var(--border);
+      border-bottom: 1px dashed rgba(198, 187, 164, 0.48);
     }
 
     .info-item:last-child {
@@ -302,10 +528,10 @@
 
     .info-label {
       font-size: 12px;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--text-soft);
-      font-weight: 700;
+      color: var(--text-faint);
+      font-weight: 800;
     }
 
     .info-value {
@@ -316,31 +542,33 @@
     }
 
     .section {
-      padding: 72px 0;
+      padding: 82px 0;
     }
 
     .section-alt {
-      background: #f4efe5;
+      background:
+        linear-gradient(180deg, rgba(244,239,229,0.72) 0%, rgba(248,244,236,0.9) 100%);
     }
 
     .section-head {
       max-width: 760px;
-      margin-bottom: 30px;
+      margin-bottom: 34px;
     }
 
     .section-kicker {
       color: var(--green);
       font-weight: 800;
-      font-size: 14px;
-      letter-spacing: 0.08em;
+      font-size: 13px;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
     .section h2 {
-      font-size: clamp(28px, 4vw, 42px);
-      margin: 0 0 12px;
-      line-height: 1.2;
+      font-size: clamp(30px, 4vw, 44px);
+      margin: 0 0 14px;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
     }
 
     .section-desc {
@@ -357,31 +585,27 @@
     }
 
     .card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 24px;
-      box-shadow: var(--shadow);
+      padding: 28px;
     }
 
     .highlight-list {
       display: grid;
-      gap: 14px;
+      gap: 16px;
     }
 
     .highlight-item {
       display: flex;
-      gap: 12px;
+      gap: 14px;
       align-items: flex-start;
     }
 
     .icon-badge {
-      width: 36px;
-      height: 36px;
-      border-radius: 10px;
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
       display: grid;
       place-items: center;
-      background: #edf5f1;
+      background: linear-gradient(135deg, #edf5f1 0%, #e3efe9 100%);
       color: var(--green);
       font-weight: 800;
       flex: 0 0 auto;
@@ -400,12 +624,32 @@
       grid-template-columns: repeat(4, 1fr);
     }
 
+    .service-card,
+    .feature-card,
+    .testimonial-card,
+    .faq-card,
+    .process-step,
+    .product-card {
+      transition: transform 0.22s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .service-card:hover,
+    .feature-card:hover,
+    .testimonial-card:hover,
+    .process-step:hover,
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--border-strong);
+    }
+
     .service-card h3,
     .feature-card h3,
     .testimonial-card h3,
     .faq-card h3 {
       margin: 0 0 10px;
       font-size: 22px;
+      letter-spacing: -0.01em;
     }
 
     .service-card p,
@@ -441,23 +685,24 @@
 
     .process-step {
       position: relative;
-      background: var(--white);
+      background: rgba(255,255,255,0.88);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 24px;
-      box-shadow: var(--shadow);
+      padding: 26px;
+      box-shadow: var(--shadow-sm);
     }
 
     .step-number {
-      width: 44px;
-      height: 44px;
+      width: 46px;
+      height: 46px;
       border-radius: 50%;
       display: grid;
       place-items: center;
-      background: var(--green);
+      background: linear-gradient(135deg, var(--green) 0%, var(--green-soft) 100%);
       color: var(--white);
       font-weight: 800;
       margin-bottom: 16px;
+      box-shadow: 0 10px 18px rgba(31, 77, 58, 0.16);
     }
 
     .clinic-grid {
@@ -504,19 +749,15 @@
     }
 
     details {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 18px 20px;
-      box-shadow: var(--shadow);
+      padding: 20px 22px;
     }
 
     summary {
       cursor: pointer;
-      font-weight: 700;
+      font-weight: 800;
       list-style: none;
       position: relative;
-      padding-right: 26px;
+      padding-right: 28px;
     }
 
     summary::-webkit-details-marker {
@@ -559,7 +800,7 @@
       gap: 14px;
       align-items: flex-start;
       padding: 14px 0;
-      border-bottom: 1px dashed var(--border);
+      border-bottom: 1px dashed rgba(198, 187, 164, 0.48);
     }
 
     .contact-row:last-child {
@@ -569,7 +810,7 @@
 
     .contact-row .label {
       min-width: 74px;
-      font-weight: 700;
+      font-weight: 800;
       color: var(--green);
     }
 
@@ -584,25 +825,25 @@
     }
 
     label {
-      font-weight: 700;
+      font-weight: 800;
       font-size: 14px;
     }
 
     input, textarea, select {
       width: 100%;
       padding: 14px 14px;
-      border-radius: 12px;
-      border: 1px solid #d7d8d4;
-      background: #fff;
-      font: inherit;
+      border-radius: 14px;
+      border: 1px solid rgba(198, 187, 164, 0.56);
+      background: rgba(255,255,255,0.92);
       color: var(--text);
       outline: none;
-      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
     }
 
     input:focus, textarea:focus, select:focus {
       border-color: var(--green-soft);
       box-shadow: 0 0 0 4px rgba(31, 77, 58, 0.08);
+      background: #fff;
     }
 
     textarea {
@@ -620,13 +861,14 @@
       width: 100%;
       min-height: 320px;
       border: 0;
-      border-radius: 16px;
+      border-radius: 18px;
     }
 
     .footer {
-      background: #143126;
+      background:
+        linear-gradient(180deg, #17382b 0%, #10271e 100%);
       color: #eef3ef;
-      padding: 46px 0 90px;
+      padding: 56px 0 90px;
     }
 
     .footer-grid {
@@ -674,7 +916,8 @@
       width: 100%;
       display: flex;
       z-index: 1100;
-      box-shadow: 0 -6px 20px rgba(0,0,0,0.15);
+      box-shadow: 0 -8px 24px rgba(0,0,0,0.16);
+      backdrop-filter: blur(10px);
     }
 
     .fixed-btn {
@@ -682,7 +925,7 @@
       text-align: center;
       padding: 14px 10px;
       color: white;
-      font-weight: bold;
+      font-weight: 800;
       font-size: 14px;
       border: none;
       display: inline-flex;
@@ -740,11 +983,11 @@
     }
 
     .product-card {
-      background: var(--white);
+      background: rgba(255,255,255,0.9);
       border: 1px solid var(--border);
-      border-radius: var(--radius);
+      border-radius: 22px;
       overflow: hidden;
-      box-shadow: var(--shadow);
+      box-shadow: var(--shadow-sm);
       display: flex;
       flex-direction: column;
       min-height: 100%;
@@ -762,6 +1005,11 @@
       height: 100%;
       object-fit: cover;
       background: #eef5f1;
+      transition: transform 0.35s ease;
+    }
+
+    .product-card:hover .product-image {
+      transform: scale(1.04);
     }
 
     .product-fallback {
@@ -778,7 +1026,7 @@
     }
 
     .product-body {
-      padding: 18px;
+      padding: 20px;
       display: flex;
       flex-direction: column;
       gap: 10px;
@@ -791,7 +1039,7 @@
       padding: 6px 10px;
       border-radius: 999px;
       font-size: 12px;
-      font-weight: 700;
+      font-weight: 800;
       background: #edf5f1;
       color: var(--green);
       border: 1px solid #d8e8df;
@@ -806,7 +1054,7 @@
 
     .product-spec {
       font-size: 14px;
-      font-weight: 700;
+      font-weight: 800;
       color: var(--gold-dark);
       background: #fbf5e9;
       border: 1px solid #eddcb8;
@@ -835,7 +1083,7 @@
 
     .cart-panel {
       position: sticky;
-      top: 92px;
+      top: 108px;
     }
 
     .cart-head {
@@ -875,8 +1123,8 @@
 
     .cart-item {
       border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 12px;
+      border-radius: 16px;
+      padding: 14px;
       background: #fcfbf8;
     }
 
@@ -896,7 +1144,7 @@
       display: inline-block;
       margin-bottom: 4px;
       font-size: 13px;
-      font-weight: 700;
+      font-weight: 800;
       color: var(--gold-dark);
     }
 
@@ -918,7 +1166,7 @@
       border: none;
       border-radius: 10px;
       padding: 8px 10px;
-      font-weight: 700;
+      font-weight: 800;
       cursor: pointer;
     }
 
@@ -939,7 +1187,7 @@
     }
 
     .summary {
-      border-top: 1px dashed var(--border);
+      border-top: 1px dashed rgba(198, 187, 164, 0.52);
       padding-top: 14px;
       margin-top: 10px;
     }
@@ -978,7 +1226,7 @@
       word-break: break-word;
       background: #f8f7f3;
       border: 1px solid var(--border);
-      border-radius: 12px;
+      border-radius: 14px;
       padding: 12px;
       overflow: auto;
       font-size: 14px;
@@ -1000,11 +1248,12 @@
       height: 22px;
       padding: 0 6px;
       border-radius: 999px;
-      background: var(--gold);
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
       color: var(--white);
       font-size: 12px;
       font-weight: 800;
       margin-left: 6px;
+      box-shadow: 0 6px 14px rgba(198, 146, 60, 0.18);
     }
 
     .cart-nav-link {
@@ -1060,18 +1309,26 @@
         display: none;
       }
 
+      .menu-toggle {
+        display: inline-flex;
+      }
+
       .cart-panel {
         position: static;
+      }
+
+      .navbar {
+        width: calc(100% - 20px);
       }
     }
 
     @media (max-width: 720px) {
       .section {
-        padding: 56px 0;
+        padding: 58px 0;
       }
 
       .hero {
-        padding-top: 42px;
+        padding-top: 44px;
       }
 
       .grid-3,
@@ -1096,11 +1353,49 @@
       }
 
       .topbar-inner {
-        font-size: 13px;
+        font-size: 12px;
       }
 
       .footer {
         padding-bottom: 96px;
+      }
+
+      .navbar-wrap {
+        top: 8px;
+        padding-top: 8px;
+      }
+
+      .navbar {
+        border-radius: 18px;
+      }
+
+      .nav-inner {
+        min-height: 64px;
+        padding: 0 14px;
+      }
+
+      h1 {
+        font-size: clamp(30px, 8vw, 42px);
+      }
+
+      .hero p.lead {
+        font-size: 16px;
+      }
+
+      .card,
+      .hero-card,
+      .process-step,
+      details {
+        border-radius: 18px;
+      }
+
+      .hero-photo {
+        min-height: 220px;
+        padding: 22px;
+      }
+
+      .hero-photo-title {
+        font-size: 24px;
       }
     }
 
@@ -1118,6 +1413,15 @@
       <circle cx="18" cy="20" r="1.5"></circle>
       <path d="M3 4h2l2.2 10.2a1 1 0 0 0 1 .8h8.9a1 1 0 0 0 1-.8L20 8H7"></path>
     </symbol>
+    <symbol id="icon-menu" viewBox="0 0 24 24">
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24">
+      <line x1="6" y1="6" x2="18" y2="18"></line>
+      <line x1="18" y1="6" x2="6" y2="18"></line>
+    </symbol>
   </svg>
 
   <div class="topbar">
@@ -1129,48 +1433,77 @@
     </div>
   </div>
 
-  <header class="navbar">
-    <div class="container nav-inner">
-      <a href="#home" class="brand">
-        <div class="brand-mark">彩</div>
-        <div class="brand-text">
-          <div class="brand-title">彩雲國貨有限公司</div>
-          <div class="brand-sub">中藥・參茸海味・中醫師駐診</div>
+  <div class="navbar-wrap">
+    <header class="navbar">
+      <div class="nav-inner">
+        <a href="#home" class="brand">
+          <div class="brand-mark">彩</div>
+          <div class="brand-text">
+            <div class="brand-title">彩雲國貨有限公司</div>
+            <div class="brand-sub">中藥・參茸海味・中醫師駐診</div>
+          </div>
+        </a>
+
+        <nav class="nav-menu" id="desktopNav">
+          <a href="#home">首頁</a>
+          <a href="#about">關於我們</a>
+          <a href="#services">服務項目</a>
+          <a href="#shop" class="shop-anchor-btn cart-nav-link">
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <use href="#icon-cart"></use>
+              </svg>
+            </span>
+            <span>產品選購</span>
+            <span class="shop-cart-pill" id="navCartCount">0</span>
+          </a>
+          <a href="#clinic">中醫服務</a>
+          <a href="#faq">常見問題</a>
+          <a href="#contact">聯絡我們</a>
+        </nav>
+
+        <div class="nav-cta">
+          <a href="#shop" class="btn btn-secondary desktop-only">
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <use href="#icon-cart"></use>
+              </svg>
+            </span>
+            查看產品
+          </a>
+          <a href="tel:27505710" class="btn btn-secondary desktop-only">立即致電</a>
+          <button class="btn btn-primary desktop-only" onclick="checkoutWhatsApp()">WhatsApp 下單</button>
+
+          <button class="menu-toggle mobile-only" id="menuToggle" aria-label="開啟選單" aria-expanded="false">
+            <svg viewBox="0 0 24 24">
+              <use href="#icon-menu"></use>
+            </svg>
+          </button>
         </div>
-      </a>
-
-      <nav class="nav-menu">
-        <a href="#home">首頁</a>
-        <a href="#about">關於我們</a>
-        <a href="#services">服務項目</a>
-        <a href="#shop" class="shop-anchor-btn cart-nav-link">
-          <span class="icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24">
-              <use href="#icon-cart"></use>
-            </svg>
-          </span>
-          <span>產品選購</span>
-          <span class="shop-cart-pill" id="navCartCount">0</span>
-        </a>
-        <a href="#clinic">中醫服務</a>
-        <a href="#faq">常見問題</a>
-        <a href="#contact">聯絡我們</a>
-      </nav>
-
-      <div class="nav-cta">
-        <a href="#shop" class="btn btn-secondary desktop-only">
-          <span class="icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24">
-              <use href="#icon-cart"></use>
-            </svg>
-          </span>
-          查看產品
-        </a>
-        <a href="tel:27505710" class="btn btn-secondary desktop-only">立即致電</a>
-        <button class="btn btn-primary" onclick="checkoutWhatsApp()">WhatsApp 下單</button>
       </div>
-    </div>
-  </header>
+
+      <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-links">
+          <a href="#home" class="btn btn-secondary mobile-nav-link">首頁</a>
+          <a href="#about" class="btn btn-secondary mobile-nav-link">關於我們</a>
+          <a href="#services" class="btn btn-secondary mobile-nav-link">服務項目</a>
+          <a href="#shop" class="btn btn-secondary mobile-nav-link">
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <use href="#icon-cart"></use>
+              </svg>
+            </span>
+            產品選購（<span id="mobileCartCount">0</span>）
+          </a>
+          <a href="#clinic" class="btn btn-secondary mobile-nav-link">中醫服務</a>
+          <a href="#faq" class="btn btn-secondary mobile-nav-link">常見問題</a>
+          <a href="#contact" class="btn btn-secondary mobile-nav-link">聯絡我們</a>
+          <a href="tel:27505710" class="btn btn-outline">立即致電</a>
+          <button class="btn btn-whatsapp" onclick="checkoutWhatsApp()">WhatsApp 下單</button>
+        </div>
+      </div>
+    </header>
+  </div>
 
   <main>
     <section class="hero" id="home">
@@ -1206,42 +1539,53 @@
           </div>
         </div>
 
-        <div class="hero-card">
-          <h3>快速聯絡資訊</h3>
-          <div class="info-list">
-            <div class="info-item">
-              <div class="info-label">地址</div>
-              <div class="info-value">彩雲一邨二期街市3號鋪</div>
-            </div>
-            <div class="info-item">
-              <div class="info-label">電話</div>
-              <div class="info-value"><a href="tel:27505710">2750 5710</a></div>
-            </div>
-            <div class="info-item">
-              <div class="info-label">WhatsApp</div>
-              <div class="info-value"><a href="https://wa.me/85261243849" target="_blank" rel="noopener noreferrer">6124 3849</a></div>
-            </div>
-            <div class="info-item">
-              <div class="info-label">Email</div>
-              <div class="info-value"><a href="mailto:wongtsztung3@gmail.com">wongtsztung3@gmail.com</a></div>
-            </div>
-            <div class="info-item">
-              <div class="info-label">營業時間</div>
-              <div class="info-value">每日 9:15 - 7:00</div>
+        <div class="hero-visual">
+          <div class="hero-photo">
+            <div class="hero-photo-content">
+              <h2 class="hero-photo-title">傳承中藥老店精神，結合現代查詢體驗</h2>
+              <p class="hero-photo-text">
+                由在地服務出發，以專業、誠信與貼心態度，讓街坊更方便了解產品、查詢服務與安排到店。
+              </p>
             </div>
           </div>
 
-          <div class="cta-group">
-            <a href="#shop" class="btn btn-primary">
-              <span class="icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <use href="#icon-cart"></use>
-                </svg>
-              </span>
-              產品選購
-            </a>
-            <button class="btn btn-whatsapp" onclick="checkoutWhatsApp()">WhatsApp</button>
-            <a href="https://maps.app.goo.gl/X6Hb7KPKKFifeg3A9" target="_blank" rel="noopener noreferrer" class="btn btn-gold">地圖導航</a>
+          <div class="hero-card">
+            <h3>快速聯絡資訊</h3>
+            <div class="info-list">
+              <div class="info-item">
+                <div class="info-label">地址</div>
+                <div class="info-value">彩雲一邨二期街市3號鋪</div>
+              </div>
+              <div class="info-item">
+                <div class="info-label">電話</div>
+                <div class="info-value"><a href="tel:27505710">2750 5710</a></div>
+              </div>
+              <div class="info-item">
+                <div class="info-label">WhatsApp</div>
+                <div class="info-value"><a href="https://wa.me/85261243849" target="_blank" rel="noopener noreferrer">6124 3849</a></div>
+              </div>
+              <div class="info-item">
+                <div class="info-label">Email</div>
+                <div class="info-value"><a href="mailto:wongtsztung3@gmail.com">wongtsztung3@gmail.com</a></div>
+              </div>
+              <div class="info-item">
+                <div class="info-label">營業時間</div>
+                <div class="info-value">每日 9:15 - 7:00</div>
+              </div>
+            </div>
+
+            <div class="cta-group">
+              <a href="#shop" class="btn btn-primary">
+                <span class="icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <use href="#icon-cart"></use>
+                  </svg>
+                </span>
+                產品選購
+              </a>
+              <button class="btn btn-whatsapp" onclick="checkoutWhatsApp()">WhatsApp</button>
+              <a href="https://maps.app.goo.gl/X6Hb7KPKKFifeg3A9" target="_blank" rel="noopener noreferrer" class="btn btn-gold">地圖導航</a>
+            </div>
           </div>
         </div>
       </div>
@@ -1824,7 +2168,7 @@
           <div class="section-kicker">Update Guide</div>
           <h2>如何自行修改產品圖片、規格與清單</h2>
           <p class="section-desc">
-            你之後只需要修改頁面內的 `products` 陣列，以及把圖片放到 `images/` 資料夾，就可以更新網站。
+            你之後只需要修改頁面內的 <code>products</code> 陣列，以及把圖片放到 <code>images/</code> 資料夾，就可以更新網站。
           </p>
         </div>
 
@@ -2021,11 +2365,16 @@
     const cartContainer = document.getElementById("cartContainer");
     const cartCount = document.getElementById("cartCount");
     const navCartCount = document.getElementById("navCartCount");
+    const mobileCartCount = document.getElementById("mobileCartCount");
     const subtotalEl = document.getElementById("subtotal");
     const totalEl = document.getElementById("total");
     const itemCountEl = document.getElementById("itemCount");
     const searchInput = document.getElementById("searchInput");
     const categoryFilter = document.getElementById("categoryFilter");
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const navLinks = document.querySelectorAll('.nav-menu a');
+    const sections = document.querySelectorAll('main section[id]');
 
     function formatPrice(price) {
       return "HK$" + price.toLocaleString("en-HK");
@@ -2152,6 +2501,7 @@
 
       cartCount.textContent = `${itemCount} 件`;
       navCartCount.textContent = itemCount;
+      if (mobileCartCount) mobileCartCount.textContent = itemCount;
       itemCountEl.textContent = itemCount;
       subtotalEl.textContent = formatPrice(subtotal);
       totalEl.textContent = formatPrice(subtotal);
@@ -2223,12 +2573,64 @@ ${itemLines}
       }, 1800);
     }
 
+    function toggleMobileMenu() {
+      if (!menuToggle || !mobileMenu) return;
+      const isOpen = mobileMenu.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.innerHTML = isOpen
+        ? `<svg viewBox="0 0 24 24"><use href="#icon-close"></use></svg>`
+        : `<svg viewBox="0 0 24 0"><use href="#icon-menu"></use></svg>`;
+      if (!isOpen) {
+        menuToggle.innerHTML = `<svg viewBox="0 0 24 24"><use href="#icon-menu"></use></svg>`;
+      }
+    }
+
+    function closeMobileMenu() {
+      if (!menuToggle || !mobileMenu) return;
+      mobileMenu.classList.remove("open");
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.innerHTML = `<svg viewBox="0 0 24 24"><use href="#icon-menu"></use></svg>`;
+    }
+
+    function updateActiveNav() {
+      const offset = 140;
+      let currentId = "home";
+
+      sections.forEach((section) => {
+        const top = section.offsetTop - offset;
+        if (window.scrollY >= top) {
+          currentId = section.id;
+        }
+      });
+
+      navLinks.forEach((link) => {
+        const href = link.getAttribute("href");
+        link.classList.toggle("active", href === `#${currentId}`);
+      });
+    }
+
     searchInput.addEventListener("input", renderProducts);
     categoryFilter.addEventListener("change", renderProducts);
+
+    if (menuToggle) {
+      menuToggle.addEventListener("click", toggleMobileMenu);
+    }
+
+    document.querySelectorAll(".mobile-nav-link").forEach((link) => {
+      link.addEventListener("click", closeMobileMenu);
+    });
+
+    window.addEventListener("scroll", updateActiveNav);
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 1080) {
+        closeMobileMenu();
+      }
+    });
 
     initCategories();
     renderProducts();
     renderCart();
+    updateActiveNav();
   </script>
 </body>
 </html>
