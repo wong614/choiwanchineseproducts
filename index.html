@@ -1,0 +1,2136 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>彩雲國貨有限公司｜中藥・參茸海味・中醫師駐診｜彩雲一邨</title>
+  <meta name="description" content="彩雲國貨有限公司位於彩雲一邨二期街市3號鋪，提供中藥、中成藥、參茸海味、保健藥及中醫師駐診服務，支援現場及預約安排，並新增產品圖片、規格、價格展示及 WhatsApp 購物車查詢。" />
+  <meta name="keywords" content="彩雲國貨有限公司,彩雲一邨中藥店,中藥材零售,中成藥,保健藥,參茸海味,中醫診所,中醫師駐診,體質調理,婦科調理,兒科調理,失眠調理,腸胃調理,轉骨,WhatsApp購物車" />
+  <meta name="theme-color" content="#1f4d3a" />
+
+  <meta property="og:title" content="彩雲國貨有限公司｜中藥・參茸海味・中醫師駐診" />
+  <meta property="og:description" content="老字號在地經營，提供中藥、中成藥、參茸海味及中醫師駐診服務，現場及預約皆可，支援產品圖片、規格、價格展示及 WhatsApp 查詢下單。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://maps.app.goo.gl/X6Hb7KPKKFifeg3A9" />
+
+  <style>
+    :root {
+      --green: #1f4d3a;
+      --green-dark: #17382b;
+      --green-soft: #2d6a4f;
+      --gold: #c6923c;
+      --gold-dark: #a97822;
+      --bg: #f7f4ee;
+      --bg-soft: #fcfbf8;
+      --text: #223127;
+      --text-soft: #5b665f;
+      --white: #ffffff;
+      --border: #e6dfd0;
+      --shadow: 0 10px 30px rgba(31, 77, 58, 0.08);
+      --radius: 18px;
+      --max: 1180px;
+      --danger: #c85b5b;
+      --wa: #25d366;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, "PingFang TC", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+      color: var(--text);
+      background: var(--bg-soft);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: calc(100% - 32px);
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+
+    .topbar {
+      background: var(--green);
+      color: #f4f7f5;
+      font-size: 14px;
+    }
+
+    .topbar-inner {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 20px;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    .topbar a {
+      color: #f4f7f5;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(252, 251, 248, 0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(230, 223, 208, 0.8);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      min-height: 74px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--green) 0%, var(--green-soft) 100%);
+      color: var(--white);
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      box-shadow: var(--shadow);
+      flex: 0 0 auto;
+    }
+
+    .brand-text {
+      min-width: 0;
+    }
+
+    .brand-title {
+      font-size: 18px;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    .brand-sub {
+      font-size: 12px;
+      color: var(--text-soft);
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      font-size: 15px;
+      color: var(--text-soft);
+    }
+
+    .nav-menu a:hover {
+      color: var(--green);
+    }
+
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 18px;
+      border-radius: 12px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s ease, opacity 0.2s ease, background 0.2s ease;
+      text-align: center;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      opacity: 0.95;
+    }
+
+    .btn-primary {
+      background: var(--green);
+      color: var(--white);
+    }
+
+    .btn-secondary {
+      background: #eef5f1;
+      color: var(--green);
+      border: 1px solid #d5e4dc;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--white);
+    }
+
+    .btn-whatsapp {
+      background: #25d366;
+      color: var(--white);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--green);
+      border: 1px solid var(--green);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at top right, rgba(198, 146, 60, 0.14), transparent 28%),
+        radial-gradient(circle at left center, rgba(31, 77, 58, 0.08), transparent 32%),
+        linear-gradient(180deg, #fcfbf8 0%, #f6f2ea 100%);
+      padding: 64px 0 36px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #edf5f1;
+      color: var(--green);
+      border: 1px solid #d8e8df;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: clamp(32px, 5vw, 56px);
+      line-height: 1.18;
+      margin: 0 0 18px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero p.lead {
+      font-size: 18px;
+      color: var(--text-soft);
+      margin: 0 0 24px;
+    }
+
+    .cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .trust-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .tag {
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid var(--border);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      color: var(--text-soft);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.03);
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,0.82);
+      border: 1px solid rgba(230,223,208,0.9);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card h3 {
+      margin: 0 0 14px;
+      font-size: 24px;
+    }
+
+    .info-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .info-item {
+      display: grid;
+      gap: 4px;
+      padding-bottom: 12px;
+      border-bottom: 1px dashed var(--border);
+    }
+
+    .info-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .info-label {
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-soft);
+      font-weight: 700;
+    }
+
+    .info-value {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+      word-break: break-word;
+    }
+
+    .section {
+      padding: 72px 0;
+    }
+
+    .section-alt {
+      background: #f4efe5;
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 30px;
+    }
+
+    .section-kicker {
+      color: var(--green);
+      font-weight: 800;
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .section h2 {
+      font-size: clamp(28px, 4vw, 42px);
+      margin: 0 0 12px;
+      line-height: 1.2;
+    }
+
+    .section-desc {
+      color: var(--text-soft);
+      font-size: 17px;
+      margin: 0;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 0.9fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .highlight-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .highlight-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .icon-badge {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      background: #edf5f1;
+      color: var(--green);
+      font-weight: 800;
+      flex: 0 0 auto;
+    }
+
+    .grid-3, .grid-4 {
+      display: grid;
+      gap: 20px;
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .grid-4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .service-card h3,
+    .feature-card h3,
+    .testimonial-card h3,
+    .faq-card h3 {
+      margin: 0 0 10px;
+      font-size: 22px;
+    }
+
+    .service-card p,
+    .feature-card p,
+    .testimonial-card p {
+      margin: 0;
+      color: var(--text-soft);
+    }
+
+    .service-points,
+    .feature-points {
+      margin: 16px 0 0;
+      padding-left: 18px;
+      color: var(--text-soft);
+    }
+
+    .service-points li,
+    .feature-points li {
+      margin-bottom: 8px;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .process-step {
+      position: relative;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .step-number {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--green);
+      color: var(--white);
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .clinic-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .note-list {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--text-soft);
+    }
+
+    .note-list li {
+      margin-bottom: 8px;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .quote {
+      font-size: 17px;
+      color: var(--text);
+      margin: 0 0 16px;
+    }
+
+    .author {
+      font-weight: 800;
+      color: var(--green);
+    }
+
+    .author-meta {
+      color: var(--text-soft);
+      font-size: 14px;
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    details {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px 20px;
+      box-shadow: var(--shadow);
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      list-style: none;
+      position: relative;
+      padding-right: 26px;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::after {
+      content: "+";
+      position: absolute;
+      right: 0;
+      top: -2px;
+      font-size: 22px;
+      color: var(--green);
+      line-height: 1;
+    }
+
+    details[open] summary::after {
+      content: "−";
+    }
+
+    details p {
+      margin: 12px 0 0;
+      color: var(--text-soft);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 0.92fr;
+      gap: 24px;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .contact-row {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 14px 0;
+      border-bottom: 1px dashed var(--border);
+    }
+
+    .contact-row:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .contact-row .label {
+      min-width: 74px;
+      font-weight: 700;
+      color: var(--green);
+    }
+
+    form {
+      display: grid;
+      gap: 14px;
+    }
+
+    .field {
+      display: grid;
+      gap: 8px;
+    }
+
+    label {
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 14px 14px;
+      border-radius: 12px;
+      border: 1px solid #d7d8d4;
+      background: #fff;
+      font: inherit;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      border-color: var(--green-soft);
+      box-shadow: 0 0 0 4px rgba(31, 77, 58, 0.08);
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .form-note {
+      color: var(--text-soft);
+      font-size: 14px;
+      margin: 0;
+    }
+
+    .map-card iframe {
+      width: 100%;
+      min-height: 320px;
+      border: 0;
+      border-radius: 16px;
+    }
+
+    .footer {
+      background: #143126;
+      color: #eef3ef;
+      padding: 46px 0 90px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.9fr 0.9fr;
+      gap: 24px;
+    }
+
+    .footer h3 {
+      margin-top: 0;
+      margin-bottom: 14px;
+      font-size: 20px;
+    }
+
+    .footer p, .footer li, .footer a {
+      color: #d6e1db;
+      margin: 0;
+    }
+
+    .footer ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .footer .cta-group {
+      margin-top: 18px;
+    }
+
+    .footer-bottom {
+      margin-top: 28px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,0.12);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: space-between;
+      color: #b6c6bd;
+      font-size: 14px;
+    }
+
+    .mobile-fixed-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      z-index: 1100;
+      box-shadow: 0 -6px 20px rgba(0,0,0,0.15);
+    }
+
+    .fixed-btn {
+      flex: 1;
+      text-align: center;
+      padding: 14px 10px;
+      color: white;
+      font-weight: bold;
+      font-size: 14px;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .fixed-btn.call {
+      background: var(--green);
+    }
+
+    .fixed-btn.whatsapp {
+      background: #25d366;
+    }
+
+    .fixed-btn.map {
+      background: var(--gold);
+    }
+
+    .fixed-btn.cart {
+      background: #2d6a4f;
+    }
+
+    .desktop-only {
+      display: inline-flex;
+    }
+
+    .mobile-only {
+      display: none;
+    }
+
+    .shop-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(300px, 0.85fr);
+      gap: 24px;
+      align-items: start;
+    }
+
+    .shop-toolbar {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+
+    .shop-toolbar .field {
+      flex: 1 1 220px;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .product-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+    }
+
+    .product-image-wrap {
+      position: relative;
+      height: 220px;
+      background: linear-gradient(135deg, #eef5f1 0%, #dcebe3 100%);
+      overflow: hidden;
+    }
+
+    .product-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      background: #eef5f1;
+    }
+
+    .product-fallback {
+      position: absolute;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      color: var(--green);
+      font-size: 36px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      background: linear-gradient(135deg, #eef5f1 0%, #dcebe3 100%);
+    }
+
+    .product-body {
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1;
+    }
+
+    .product-category {
+      display: inline-flex;
+      align-self: flex-start;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      background: #edf5f1;
+      color: var(--green);
+      border: 1px solid #d8e8df;
+    }
+
+    .product-title {
+      margin: 0;
+      font-size: 20px;
+      color: var(--text);
+      line-height: 1.3;
+    }
+
+    .product-spec {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--gold-dark);
+      background: #fbf5e9;
+      border: 1px solid #eddcb8;
+      display: inline-flex;
+      align-self: flex-start;
+      padding: 5px 10px;
+      border-radius: 999px;
+    }
+
+    .product-desc {
+      margin: 0;
+      color: var(--text-soft);
+      font-size: 15px;
+    }
+
+    .product-price {
+      margin-top: auto;
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--green);
+    }
+
+    .product-actions {
+      margin-top: 8px;
+    }
+
+    .cart-panel {
+      position: sticky;
+      top: 92px;
+    }
+
+    .cart-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .cart-head h3 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    .cart-badge {
+      background: #edf5f1;
+      color: var(--green);
+      border: 1px solid #d8e8df;
+      border-radius: 999px;
+      padding: 5px 10px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .cart-empty {
+      margin: 0;
+      color: var(--text-soft);
+      padding: 10px 0;
+    }
+
+    .cart-items {
+      display: grid;
+      gap: 12px;
+      margin: 14px 0 18px;
+    }
+
+    .cart-item {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 12px;
+      background: #fcfbf8;
+    }
+
+    .cart-item-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .cart-item-name {
+      margin: 0 0 4px;
+      font-weight: 800;
+    }
+
+    .cart-item-spec {
+      display: inline-block;
+      margin-bottom: 4px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--gold-dark);
+    }
+
+    .cart-item-meta {
+      font-size: 14px;
+      color: var(--text-soft);
+    }
+
+    .qty-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    .qty-btn,
+    .remove-btn {
+      border: none;
+      border-radius: 10px;
+      padding: 8px 10px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .qty-btn {
+      background: #eef5f1;
+      color: var(--green);
+    }
+
+    .remove-btn {
+      background: #fdeaea;
+      color: var(--danger);
+    }
+
+    .qty-number {
+      min-width: 28px;
+      text-align: center;
+      font-weight: 800;
+    }
+
+    .summary {
+      border-top: 1px dashed var(--border);
+      padding-top: 14px;
+      margin-top: 10px;
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .summary-row.total {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--green);
+    }
+
+    .cart-note {
+      margin-top: 14px;
+      padding: 14px;
+      border-radius: 14px;
+      background: #f8f5ee;
+      border: 1px solid var(--border);
+      color: var(--text-soft);
+      font-size: 14px;
+    }
+
+    .guide-grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .guide-card pre {
+      margin: 0;
+      white-space: pre-wrap;
+      word-break: break-word;
+      background: #f8f7f3;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px;
+      overflow: auto;
+      font-size: 14px;
+    }
+
+    .guide-card code {
+      font-family: Consolas, Monaco, monospace;
+    }
+
+    .shop-anchor-btn {
+      position: relative;
+    }
+
+    .shop-cart-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 22px;
+      height: 22px;
+      padding: 0 6px;
+      border-radius: 999px;
+      background: var(--gold);
+      color: var(--white);
+      font-size: 12px;
+      font-weight: 800;
+      margin-left: 6px;
+    }
+
+    .cart-nav-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .cart-icon {
+      font-size: 16px;
+      line-height: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .mobile-cart-icon {
+      font-size: 16px;
+      line-height: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .about-grid,
+      .contact-grid,
+      .clinic-grid,
+      .footer-grid,
+      .shop-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .grid-3,
+      .features-grid,
+      .process-grid,
+      .testimonial-grid,
+      .products-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .nav-menu {
+        display: none;
+      }
+
+      .cart-panel {
+        position: static;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .section {
+        padding: 56px 0;
+      }
+
+      .hero {
+        padding-top: 42px;
+      }
+
+      .grid-3,
+      .grid-4,
+      .features-grid,
+      .process-grid,
+      .testimonial-grid,
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-cta .desktop-only {
+        display: none;
+      }
+
+      .mobile-only {
+        display: inline-flex;
+      }
+
+      .brand-sub {
+        display: none;
+      }
+
+      .topbar-inner {
+        font-size: 13px;
+      }
+
+      .footer {
+        padding-bottom: 96px;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .mobile-fixed-bar {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span>地址：彩雲一邨二期街市3號鋪</span>
+      <a href="tel:27505710">電話：2750 5710</a>
+      <a href="https://wa.me/85261243849" target="_blank" rel="noopener noreferrer">WhatsApp：6124 3849</a>
+      <span>營業時間：每日 9:15 - 7:00</span>
+    </div>
+  </div>
+
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="#home" class="brand">
+        <div class="brand-mark">彩</div>
+        <div class="brand-text">
+          <div class="brand-title">彩雲國貨有限公司</div>
+          <div class="brand-sub">中藥・參茸海味・中醫師駐診</div>
+        </div>
+      </a>
+
+      <nav class="nav-menu">
+        <a href="#home">首頁</a>
+        <a href="#about">關於我們</a>
+        <a href="#services">服務項目</a>
+        <a href="#shop" class="shop-anchor-btn cart-nav-link">
+          <span class="cart-icon" aria-hidden="true">🛒</span>
+          <span>產品選購</span>
+          <span class="shop-cart-pill" id="navCartCount">0</span>
+        </a>
+        <a href="#clinic">中醫服務</a>
+        <a href="#faq">常見問題</a>
+        <a href="#contact">聯絡我們</a>
+      </nav>
+
+      <div class="nav-cta">
+        <a href="#shop" class="btn btn-secondary desktop-only"><span class="cart-icon" aria-hidden="true">🛒</span> 查看產品</a>
+        <a href="tel:27505710" class="btn btn-secondary desktop-only">立即致電</a>
+        <button class="btn btn-primary" onclick="checkoutWhatsApp()">WhatsApp 下單</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">老字號在地經營．中醫師駐診．現場及預約皆可</div>
+          <h1>彩雲國貨有限公司｜老字號中藥參茸海味．中醫師駐診．在地安心之選</h1>
+          <p class="lead">
+            提供中藥、中成藥、參茸海味及多元日常調理服務，設有中醫師駐診，支援現場及預約安排，
+            現已加入產品圖片、規格、價格展示與 WhatsApp 購物車，讓街坊更方便查詢及選購。
+          </p>
+
+          <div class="cta-group">
+            <a href="#shop" class="btn btn-primary"><span class="cart-icon" aria-hidden="true">🛒</span> 立即選購產品</a>
+            <button class="btn btn-whatsapp" onclick="checkoutWhatsApp()">WhatsApp 下單</button>
+            <a href="https://maps.app.goo.gl/X6Hb7KPKKFifeg3A9" target="_blank" rel="noopener noreferrer" class="btn btn-gold">Google 地圖導航</a>
+          </div>
+
+          <div class="trust-tags">
+            <div class="tag">老字號在地經營</div>
+            <div class="tag">中醫師駐診</div>
+            <div class="tag">現場及預約皆可</div>
+            <div class="tag">專業把關藥材品質</div>
+            <div class="tag">親切說明，清楚易明</div>
+            <div class="tag">價格透明，安心選購</div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <h3>快速聯絡資訊</h3>
+          <div class="info-list">
+            <div class="info-item">
+              <div class="info-label">地址</div>
+              <div class="info-value">彩雲一邨二期街市3號鋪</div>
+            </div>
+            <div class="info-item">
+              <div class="info-label">電話</div>
+              <div class="info-value"><a href="tel:27505710">2750 5710</a></div>
+            </div>
+            <div class="info-item">
+              <div class="info-label">WhatsApp</div>
+              <div class="info-value"><a href="https://wa.me/85261243849" target="_blank" rel="noopener noreferrer">6124 3849</a></div>
+            </div>
+            <div class="info-item">
+              <div class="info-label">Email</div>
+              <div class="info-value"><a href="mailto:wongtsztung3@gmail.com">wongtsztung3@gmail.com</a></div>
+            </div>
+            <div class="info-item">
+              <div class="info-label">營業時間</div>
+              <div class="info-value">每日 9:15 - 7:00</div>
+            </div>
+          </div>
+
+          <div class="cta-group">
+            <a href="#shop" class="btn btn-primary"><span class="cart-icon" aria-hidden="true">🛒</span> 產品選購</a>
+            <button class="btn btn-whatsapp" onclick="checkoutWhatsApp()">WhatsApp</button>
+            <a href="https://maps.app.goo.gl/X6Hb7KPKKFifeg3A9" target="_blank" rel="noopener noreferrer" class="btn btn-gold">地圖導航</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">About</div>
+          <h2>關於彩雲國貨有限公司</h2>
+          <p class="section-desc">
+            扎根社區的老字號中藥店，以踏實、專業、親切的服務精神，陪伴街坊照顧日常健康。
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="card">
+            <p>
+              彩雲國貨有限公司一直扎根社區，以老字號中藥店的踏實精神，為街坊提供中藥、中成藥、參茸海味及保健相關產品。我們重視每一位顧客的需要，從產品選購、日常保養，到中醫相關服務安排，都希望做到清楚、專業、貼心。
+            </p>
+            <p>
+              我們相信，健康服務除了講求專業，更需要讓人感到安心與信任。因此，我們堅持對藥材品質作出把關，重視服務細節，並以親切耐心的態度，協助顧客按自身需要作出合適選擇。
+            </p>
+            <p>
+              店內設有中醫師駐診，提供現場及預約安排，方便有日常保養、體質調理及不同調理需要的人士查詢。無論你是想選購中藥材、了解保健產品，或希望進一步了解中醫服務，彩雲國貨有限公司都希望成為你在社區中值得信賴的健康夥伴。
+            </p>
+
+            <div class="cta-group">
+              <a href="#services" class="btn btn-outline">了解服務項目</a>
+              <a href="#shop" class="btn btn-primary"><span class="cart-icon" aria-hidden="true">🛒</span> 查看產品價格</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="highlight-list">
+              <div class="highlight-item">
+                <div class="icon-badge">老</div>
+                <div>
+                  <strong>老字號在地經營</strong><br />
+                  多年服務社區街坊，建立穩定而長久的信任關係。
+                </div>
+              </div>
+              <div class="highlight-item">
+                <div class="icon-badge">醫</div>
+                <div>
+                  <strong>中醫師駐診</strong><br />
+                  提供現場及預約安排，方便不同時間需求的顧客。
+                </div>
+              </div>
+              <div class="highlight-item">
+                <div class="icon-badge">選</div>
+                <div>
+                  <strong>產品與服務多元</strong><br />
+                  涵蓋中藥、中成藥、參茸海味及日常保養相關需求。
+                </div>
+              </div>
+              <div class="highlight-item">
+                <div class="icon-badge">安</div>
+                <div>
+                  <strong>專業把關・安心選購</strong><br />
+                  重視品質、服務細節與價格透明，讓顧客更放心。
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="services">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Services</div>
+          <h2>我們的服務項目</h2>
+          <p class="section-desc">
+            從中藥材零售到中醫駐診安排，為街坊提供清楚、方便、安心的健康服務體驗。
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card service-card">
+            <h3>中藥材零售</h3>
+            <p>提供多款常用中藥材，方便顧客按日常需要選購。</p>
+            <ul class="service-points">
+              <li>常用中藥材選擇齊全</li>
+              <li>重視品質與來源把關</li>
+              <li>可先查詢再到店購買</li>
+            </ul>
+          </div>
+
+          <div class="card service-card">
+            <h3>中成藥及保健藥</h3>
+            <p>為日常保養與家庭常備需要，提供多類中成藥及保健產品。</p>
+            <ul class="service-points">
+              <li>適合日常保健及家庭常備</li>
+              <li>產品種類多元</li>
+              <li>店內可提供基本選購指引</li>
+            </ul>
+          </div>
+
+          <div class="card service-card">
+            <h3>參茸海味</h3>
+            <p>提供參茸海味產品，適合送禮、進補及日常保養需要。</p>
+            <ul class="service-points">
+              <li>精選參茸海味產品</li>
+              <li>適合節日送禮與日常保養</li>
+              <li>可按需要了解合適選擇</li>
+            </ul>
+          </div>
+
+          <div class="card service-card">
+            <h3>體質調理</h3>
+            <p>針對日常體質保養需求，提供中醫與中藥相關調理方向查詢。</p>
+            <ul class="service-points">
+              <li>適合關注日常保養人士</li>
+              <li>可配合個人需要作初步了解</li>
+              <li>支援現場或預約安排</li>
+            </ul>
+          </div>
+
+          <div class="card service-card">
+            <h3>婦科、兒科及日常調理</h3>
+            <p>針對不同年齡層與日常需要，提供合適的中醫調理查詢與服務安排。</p>
+            <ul class="service-points">
+              <li>婦科調理方向查詢</li>
+              <li>兒科日常調理支援</li>
+              <li>適合家庭客群長期跟進</li>
+            </ul>
+          </div>
+
+          <div class="card service-card">
+            <h3>中醫駐診服務</h3>
+            <p>店內設有中醫師駐診，提供現場及預約制服務，方便街坊安排。</p>
+            <ul class="service-points">
+              <li>中醫師駐診更方便</li>
+              <li>現場及預約皆可</li>
+              <li>歡迎先致電或 WhatsApp 查詢</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="cta-group">
+          <a href="#shop" class="btn btn-outline"><span class="cart-icon" aria-hidden="true">🛒</span> 查看產品選購</a>
+          <a href="tel:27505710" class="btn btn-primary">預約中醫服務</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="shop">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Shop</div>
+          <h2>產品選購｜真圖片・規格・價格展示・WhatsApp 購物車</h2>
+          <p class="section-desc">
+            你可先瀏覽產品圖片、查看規格與價格、加入購物車，再透過 WhatsApp 把清單發送給我們，方便確認存貨、份量、包裝或安排。
+          </p>
+        </div>
+
+        <div class="shop-layout">
+          <div class="card">
+            <div class="shop-toolbar">
+              <div class="field">
+                <label for="searchInput">搜尋產品</label>
+                <input type="text" id="searchInput" placeholder="搜尋產品名稱、規格、分類或描述..." />
+              </div>
+              <div class="field">
+                <label for="categoryFilter">分類</label>
+                <select id="categoryFilter">
+                  <option value="全部">全部分類</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="products-grid" id="productsGrid"></div>
+
+            <div class="cart-note" style="margin-top: 20px;">
+              提示：如某產品有不同等級、不同包裝或其他份量，可先在備註中說明，我們會再為你確認。
+            </div>
+          </div>
+
+          <aside class="card cart-panel">
+            <div class="cart-head">
+              <h3>購物車</h3>
+              <span class="cart-badge" id="cartCount">0 件</span>
+            </div>
+
+            <div id="cartContainer">
+              <p class="cart-empty">你尚未加入任何產品。</p>
+            </div>
+
+            <div class="summary">
+              <div class="summary-row">
+                <span>小計</span>
+                <span id="subtotal">HK$0</span>
+              </div>
+              <div class="summary-row">
+                <span>項目數量</span>
+                <span id="itemCount">0</span>
+              </div>
+              <div class="summary-row total">
+                <span>總額</span>
+                <span id="total">HK$0</span>
+              </div>
+            </div>
+
+            <div class="field" style="margin-top: 18px;">
+              <label for="customerName">姓名（可選）</label>
+              <input type="text" id="customerName" placeholder="請輸入姓名" />
+            </div>
+
+            <div class="field" style="margin-top: 14px;">
+              <label for="customerPhone">聯絡電話（可選）</label>
+              <input type="text" id="customerPhone" placeholder="請輸入聯絡電話" />
+            </div>
+
+            <div class="field" style="margin-top: 14px;">
+              <label for="customerNote">備註（可選）</label>
+              <textarea id="customerNote" placeholder="例如：想要 100g、禮盒裝、自取、查詢存貨等"></textarea>
+            </div>
+
+            <div class="cta-group">
+              <button class="btn btn-whatsapp" onclick="checkoutWhatsApp()">WhatsApp 提交訂單</button>
+              <button class="btn btn-secondary" onclick="scrollToProducts()">繼續選購</button>
+            </div>
+
+            <div class="cart-note">
+              這個購物車屬於查詢／下單整理用途，最終價格、規格及存貨以店舖確認為準。
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="why-us">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Why Choose Us</div>
+          <h2>為什麼街坊選擇彩雲國貨</h2>
+          <p class="section-desc">
+            我們重視的不只是產品，更是讓每位顧客在查詢、選購與安排服務時都感到安心與方便。
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <div class="card feature-card">
+            <h3>老字號在地經營</h3>
+            <p>多年扎根社區，熟悉街坊需要，建立穩定而長久的信任關係。</p>
+          </div>
+          <div class="card feature-card">
+            <h3>中醫師駐診</h3>
+            <p>店內設有中醫師駐診，方便有需要人士即時查詢及安排現場或預約服務。</p>
+          </div>
+          <div class="card feature-card">
+            <h3>一站式更方便</h3>
+            <p>中藥選購與中醫相關服務可於同一地點了解，節省時間，更易安排。</p>
+          </div>
+          <div class="card feature-card">
+            <h3>專業把關</h3>
+            <p>重視中藥材及相關產品品質，讓顧客選購時更安心。</p>
+          </div>
+          <div class="card feature-card">
+            <h3>親切耐心服務</h3>
+            <p>無論是首次接觸中藥，或已有固定保養習慣，我們都樂意以清晰方式說明。</p>
+          </div>
+          <div class="card feature-card">
+            <h3>價格透明</h3>
+            <p>重視誠信經營，讓顧客在了解清楚後安心選購與查詢。</p>
+          </div>
+        </div>
+
+        <div class="cta-group">
+          <a href="tel:27505710" class="btn btn-primary">立即致電查詢</a>
+          <a href="#shop" class="btn btn-outline"><span class="cart-icon" aria-hidden="true">🛒</span> 查看產品價格</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="process">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Process</div>
+          <h2>簡單 4 步，輕鬆查詢與到店</h2>
+          <p class="section-desc">
+            第一次接觸中藥或中醫服務也不用擔心，流程清楚易明，讓你更安心。
+          </p>
+        </div>
+
+        <div class="process-grid">
+          <div class="process-step">
+            <div class="step-number">1</div>
+            <h3>瀏覽產品圖片與規格</h3>
+            <p>可先在網站查看產品圖片、規格、價格及產品簡介。</p>
+          </div>
+          <div class="process-step">
+            <div class="step-number">2</div>
+            <h3>加入購物車</h3>
+            <p>把你想查詢或購買的產品加入購物車，並選擇所需數量。</p>
+          </div>
+          <div class="process-step">
+            <div class="step-number">3</div>
+            <h3>WhatsApp 發送清單</h3>
+            <p>透過 WhatsApp 傳送產品名稱、規格、數量與備註，方便我們跟進確認。</p>
+          </div>
+          <div class="process-step">
+            <div class="step-number">4</div>
+            <h3>到店選購或安排服務</h3>
+            <p>可按情況到店選購產品，或安排現場 / 預約中醫服務。</p>
+          </div>
+        </div>
+
+        <div class="cta-group">
+          <a href="#shop" class="btn btn-whatsapp"><span class="cart-icon" aria-hidden="true">🛒</span> 立即用購物車查詢</a>
+          <a href="tel:27505710" class="btn btn-primary">預約中醫服務</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="clinic">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Clinic</div>
+          <h2>中醫師駐診服務</h2>
+          <p class="section-desc">
+            設有中醫師駐診，支援現場及預約安排，方便街坊按需要查詢與到店。
+          </p>
+        </div>
+
+        <div class="clinic-grid">
+          <div class="card">
+            <p>
+              彩雲國貨有限公司設有中醫師駐診，方便有需要人士查詢中醫相關服務。無論你是希望了解日常保養、體質調理，或針對婦科、兒科、失眠、腸胃、轉骨等方向作進一步了解，都可先與我們聯絡。
+            </p>
+            <p>
+              我們提供現場及預約制安排，讓不同時間需求的顧客都能較靈活地作出安排。建議你可先致電或透過 WhatsApp 查詢，以便了解合適時段與服務方式。
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>溫馨提示</h3>
+            <ul class="note-list">
+              <li>歡迎先查詢再到店</li>
+              <li>現場及預約皆可安排</li>
+              <li>可先了解時段與服務方式</li>
+              <li>服務內容將按實際情況作專業評估</li>
+            </ul>
+
+            <div class="cta-group">
+              <a href="tel:27505710" class="btn btn-primary">立即預約</a>
+              <a href="https://wa.me/85261243849" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">WhatsApp 查詢中醫服務</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="testimonials">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Testimonials</div>
+          <h2>街坊真實好評</h2>
+          <p class="section-desc">
+            以親切服務、清楚說明與方便安排，成為不少社區街坊日常健康管理的選擇。
+          </p>
+        </div>
+
+        <div class="testimonial-grid">
+          <div class="card testimonial-card">
+            <p class="quote">「平時家中需要買中藥或保健產品，我都會來這裡。店員講解清楚，態度親切，買得安心。」</p>
+            <div class="author">陳太</div>
+            <div class="author-meta">在地街坊</div>
+          </div>
+
+          <div class="card testimonial-card">
+            <p class="quote">「中醫師駐診很方便，先 WhatsApp 查詢再去，安排都很清楚，對街坊來說非常方便。」</p>
+            <div class="author">黃先生</div>
+            <div class="author-meta">回訪顧客</div>
+          </div>
+
+          <div class="card testimonial-card">
+            <p class="quote">「店舖位置容易找，服務態度好，價錢透明，想買參茸海味或了解調理方向都可以先問清楚。」</p>
+            <div class="author">李女士</div>
+            <div class="author-meta">Google 評價</div>
+          </div>
+        </div>
+
+        <div class="cta-group">
+          <a href="#contact" class="btn btn-outline">查看聯絡方式</a>
+          <a href="#shop" class="btn btn-gold"><span class="cart-icon" aria-hidden="true">🛒</span> 先看產品</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">FAQ</div>
+          <h2>常見問題</h2>
+          <p class="section-desc">
+            如有其他查詢，歡迎直接致電或 WhatsApp 聯絡我們。
+          </p>
+        </div>
+
+        <div class="faq-list">
+          <details open>
+            <summary>可以直接到店購買中藥或保健產品嗎？</summary>
+            <p>可以，歡迎直接到店選購。如想先了解產品類型，也可先在網站查看產品圖片、規格、價格或用 WhatsApp 查詢。</p>
+          </details>
+
+          <details>
+            <summary>店內是否有中醫師駐診？</summary>
+            <p>有，店內設有中醫師駐診，可按需要安排現場或預約服務。</p>
+          </details>
+
+          <details>
+            <summary>中醫服務需要預約嗎？</summary>
+            <p>我們提供現場及預約制兩種方式。為方便安排，建議先致電或 WhatsApp 查詢。</p>
+          </details>
+
+          <details>
+            <summary>可否先用 WhatsApp 詢問？</summary>
+            <p>可以，歡迎透過 WhatsApp 先了解產品、服務或安排方式，也可把購物車清單直接發送給我們。</p>
+          </details>
+
+          <details>
+            <summary>你們有哪些常見調理方向可供查詢？</summary>
+            <p>可就體質調理、婦科、兒科、失眠、腸胃、轉骨及日常保養等方向先作查詢。</p>
+          </details>
+
+          <details>
+            <summary>營業時間是什麼？</summary>
+            <p>營業時間為每日 9:15 - 7:00。</p>
+          </details>
+
+          <details>
+            <summary>店舖位置在哪裡？</summary>
+            <p>我們位於彩雲一邨二期街市3號鋪，可使用 Google 地圖導航前往。</p>
+          </details>
+
+          <details>
+            <summary>第一次到店前需要準備什麼？</summary>
+            <p>如有特定需求，建議先整理想查詢的內容；如是產品方面，也可先用網站購物車整理清單，再透過 WhatsApp 發送給我們。</p>
+          </details>
+        </div>
+
+        <div class="cta-group">
+          <a href="tel:27505710" class="btn btn-primary">還有問題？立即聯絡</a>
+          <a href="https://wa.me/85261243849" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">WhatsApp 查詢</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="contact">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Contact</div>
+          <h2>聯絡我們</h2>
+          <p class="section-desc">
+            如想查詢中藥、參茸海味、保健產品，或了解中醫駐診安排，歡迎致電或 WhatsApp 聯絡我們，我們會盡快為你提供協助。
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="card">
+            <h3>彩雲國貨有限公司</h3>
+
+            <div class="contact-list">
+              <div class="contact-row">
+                <div class="label">地址</div>
+                <div>彩雲一邨二期街市3號鋪</div>
+              </div>
+              <div class="contact-row">
+                <div class="label">電話</div>
+                <div><a href="tel:27505710">2750 5710</a></div>
+              </div>
+              <div class="contact-row">
+                <div class="label">WhatsApp</div>
+                <div><a href="https://wa.me/85261243849" target="_blank" rel="noopener noreferrer">6124 3849</a></div>
+              </div>
+              <div class="contact-row">
+                <div class="label">Email</div>
+                <div><a href="mailto:wongtsztung3@gmail.com">wongtsztung3@gmail.com</a></div>
+              </div>
+              <div class="contact-row">
+                <div class="label">營業時間</div>
+                <div>每日 9:15 - 7:00</div>
+              </div>
+            </div>
+
+            <div class="cta-group">
+              <a href="tel:27505710" class="btn btn-primary">立即致電</a>
+              <button class="btn btn-whatsapp" onclick="checkoutWhatsApp()">WhatsApp 下單</button>
+              <a href="#shop" class="btn btn-secondary"><span class="cart-icon" aria-hidden="true">🛒</span> 查看產品</a>
+              <a href="https://maps.app.goo.gl/X6Hb7KPKKFifeg3A9" target="_blank" rel="noopener noreferrer" class="btn btn-gold">Google 地圖導航</a>
+              <a href="mailto:wongtsztung3@gmail.com" class="btn btn-secondary">Email 聯絡</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>線上查詢 / 預約</h3>
+            <p class="form-note">歡迎留下你的聯絡資料與查詢內容，我們會盡快與你聯絡。</p>
+
+            <form action="mailto:wongtsztung3@gmail.com" method="post" enctype="text/plain">
+              <div class="field">
+                <label for="name">姓名</label>
+                <input id="name" name="姓名" type="text" placeholder="請輸入姓名" required />
+              </div>
+
+              <div class="field">
+                <label for="phone">聯絡電話</label>
+                <input id="phone" name="聯絡電話" type="tel" placeholder="請輸入聯絡電話" required />
+              </div>
+
+              <div class="field">
+                <label for="message">查詢內容</label>
+                <textarea id="message" name="查詢內容" placeholder="例如：想查詢中藥產品 / 中醫服務 / 到店安排"></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary">送出查詢</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="card map-card" style="margin-top: 24px;">
+          <h3 style="margin-top: 0;">地圖位置</h3>
+          <iframe
+            loading="lazy"
+            allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=%E5%BD%A9%E9%9B%B2%E4%B8%80%E9%82%A8%E4%BA%8C%E6%9C%9F%E8%A1%97%E5%B8%823%E8%99%9F%E9%8B%AA&output=embed">
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="guide">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Update Guide</div>
+          <h2>如何自行修改產品圖片、規格與清單</h2>
+          <p class="section-desc">
+            你之後只需要修改頁面內的 `products` 陣列，以及把圖片放到 `images/` 資料夾，就可以更新網站。
+          </p>
+        </div>
+
+        <div class="guide-grid">
+          <div class="card guide-card">
+            <h3>產品資料格式</h3>
+            <pre><code>{
+  id: 1,
+  name: "花旗參片",
+  spec: "100克 / 包",
+  category: "參茸海味",
+  price: 380,
+  image: "images/american-ginseng.jpg",
+  imageText: "參",
+  description: "適合日常保養及送禮，方便查詢不同等級與規格。"
+}</code></pre>
+          </div>
+
+          <div class="card guide-card">
+            <h3>新增產品範例</h3>
+            <pre><code>{
+  id: 7,
+  name: "冬蟲夏草",
+  spec: "37.5克 / 盒",
+  category: "參茸海味",
+  price: 1280,
+  image: "images/cordyceps.jpg",
+  imageText: "草",
+  description: "精選產品，適合送禮及日常保養查詢。"
+}</code></pre>
+          </div>
+
+          <div class="card guide-card">
+            <h3>圖片放置方式</h3>
+            <pre><code>網站根目錄
+├─ index.html
+└─ images
+   ├─ american-ginseng.jpg
+   ├─ fritillaria.jpg
+   ├─ dendrobium.jpg
+   ├─ korean-ginseng.jpg
+   ├─ soup-pack.jpg
+   └─ seafood-gift-box.jpg</code></pre>
+          </div>
+
+          <div class="card guide-card">
+            <h3>注意事項</h3>
+            <pre><code>- id 不可重複
+- price 只填數字，例如 380
+- spec 可寫 "100克 / 包"、"1盒"、"禮盒裝"
+- image 寫相對路徑，例如 images/product1.jpg
+- 如果圖片路徑錯了，網站會自動顯示 imageText 文字佔位</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3>彩雲國貨有限公司</h3>
+          <p>老字號在地經營．中藥參茸海味．中醫師駐診</p>
+          <div class="cta-group">
+            <a href="tel:27505710" class="btn btn-secondary">致電</a>
+            <button class="btn btn-whatsapp" onclick="checkoutWhatsApp()">WhatsApp</button>
+            <a href="#shop" class="btn btn-secondary"><span class="cart-icon" aria-hidden="true">🛒</span> 產品</a>
+            <a href="https://maps.app.goo.gl/X6Hb7KPKKFifeg3A9" target="_blank" rel="noopener noreferrer" class="btn btn-gold">導航</a>
+          </div>
+        </div>
+
+        <div>
+          <h3>聯絡資訊</h3>
+          <p>地址：彩雲一邨二期街市3號鋪</p>
+          <p>電話：<a href="tel:27505710">2750 5710</a></p>
+          <p>WhatsApp：<a href="https://wa.me/85261243849" target="_blank" rel="noopener noreferrer">6124 3849</a></p>
+          <p>Email：<a href="mailto:wongtsztung3@gmail.com">wongtsztung3@gmail.com</a></p>
+          <p>營業時間：每日 9:15 - 7:00</p>
+        </div>
+
+        <div>
+          <h3>快速連結</h3>
+          <ul>
+            <li><a href="#home">首頁</a></li>
+            <li><a href="#shop">產品選購</a></li>
+            <li><a href="#services">服務項目</a></li>
+            <li><a href="#clinic">中醫服務</a></li>
+            <li><a href="#faq">常見問題</a></li>
+            <li><a href="#contact">聯絡我們</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 彩雲國貨有限公司 All Rights Reserved.</div>
+        <div>
+          <a href="#">隱私權政策</a> ／
+          <a href="#">服務條款</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="mobile-fixed-bar">
+    <a href="tel:27505710" class="fixed-btn call">致電</a>
+    <a href="#shop" class="fixed-btn cart"><span class="mobile-cart-icon" aria-hidden="true">🛒</span> 購物車</a>
+    <button onclick="checkoutWhatsApp()" class="fixed-btn whatsapp">WhatsApp</button>
+    <a href="https://maps.app.goo.gl/X6Hb7KPKKFifeg3A9" target="_blank" rel="noopener noreferrer" class="fixed-btn map">導航</a>
+  </div>
+
+  <script>
+    const products = [
+      {
+        id: 1,
+        name: "花旗參片",
+        spec: "100克 / 包",
+        category: "參茸海味",
+        price: 380,
+        image: "images/american-ginseng.jpg",
+        imageText: "參",
+        description: "適合日常保養及送禮，方便查詢不同等級與規格。"
+      },
+      {
+        id: 2,
+        name: "川貝",
+        spec: "37.5克 / 包",
+        category: "中藥材",
+        price: 220,
+        image: "images/fritillaria.jpg",
+        imageText: "貝",
+        description: "常見中藥材，可按需要查詢不同規格及選購方向。"
+      },
+      {
+        id: 3,
+        name: "石斛",
+        spec: "75克 / 包",
+        category: "參茸海味",
+        price: 460,
+        image: "images/dendrobium.jpg",
+        imageText: "斛",
+        description: "適合日常保養人士了解，可查詢包裝與等級。"
+      },
+      {
+        id: 4,
+        name: "高麗參",
+        spec: "150克 / 盒",
+        category: "參茸海味",
+        price: 680,
+        image: "images/korean-ginseng.jpg",
+        imageText: "參",
+        description: "精選參類產品，適合作送禮及日常進補查詢。"
+      },
+      {
+        id: 5,
+        name: "保健湯包",
+        spec: "1包",
+        category: "保健產品",
+        price: 98,
+        image: "images/soup-pack.jpg",
+        imageText: "湯",
+        description: "方便日常煲湯使用，適合家庭常備。"
+      },
+      {
+        id: 6,
+        name: "海味禮盒",
+        spec: "禮盒裝",
+        category: "參茸海味",
+        price: 880,
+        image: "images/seafood-gift-box.jpg",
+        imageText: "禮",
+        description: "適合節日送禮及節慶需要，歡迎查詢款式。"
+      }
+    ];
+
+    const whatsappNumber = "85261243849";
+    let cart = [];
+
+    const productsGrid = document.getElementById("productsGrid");
+    const cartContainer = document.getElementById("cartContainer");
+    const cartCount = document.getElementById("cartCount");
+    const navCartCount = document.getElementById("navCartCount");
+    const subtotalEl = document.getElementById("subtotal");
+    const totalEl = document.getElementById("total");
+    const itemCountEl = document.getElementById("itemCount");
+    const searchInput = document.getElementById("searchInput");
+    const categoryFilter = document.getElementById("categoryFilter");
+
+    function formatPrice(price) {
+      return "HK$" + price.toLocaleString("en-HK");
+    }
+
+    function initCategories() {
+      const categories = ["全部", ...new Set(products.map((p) => p.category))];
+      categoryFilter.innerHTML = categories
+        .map((cat) => `<option value="${cat}">${cat === "全部" ? "全部分類" : cat}</option>`)
+        .join("");
+    }
+
+    function renderProducts() {
+      const keyword = searchInput.value.trim().toLowerCase();
+      const selectedCategory = categoryFilter.value;
+
+      const filtered = products.filter((product) => {
+        const matchKeyword =
+          product.name.toLowerCase().includes(keyword) ||
+          product.spec.toLowerCase().includes(keyword) ||
+          product.description.toLowerCase().includes(keyword) ||
+          product.category.toLowerCase().includes(keyword);
+
+        const matchCategory =
+          selectedCategory === "全部" ||
+          selectedCategory === "全部分類" ||
+          product.category === selectedCategory;
+
+        return matchKeyword && matchCategory;
+      });
+
+      if (filtered.length === 0) {
+        productsGrid.innerHTML = `
+          <div class="card" style="grid-column: 1 / -1;">
+            <p style="margin: 0;">找不到相關產品。</p>
+          </div>
+        `;
+        return;
+      }
+
+      productsGrid.innerHTML = filtered.map((product) => `
+        <article class="product-card">
+          <div class="product-image-wrap">
+            <img
+              class="product-image"
+              src="${product.image}"
+              alt="${product.name}"
+              loading="lazy"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            />
+            <div class="product-fallback">${product.imageText || "藥"}</div>
+          </div>
+          <div class="product-body">
+            <span class="product-category">${product.category}</span>
+            <h3 class="product-title">${product.name}</h3>
+            <span class="product-spec">${product.spec}</span>
+            <p class="product-desc">${product.description}</p>
+            <div class="product-price">${formatPrice(product.price)}</div>
+            <div class="product-actions">
+              <button class="btn btn-primary" onclick="addToCart(${product.id})">加入購物車</button>
+            </div>
+          </div>
+        </article>
+      `).join("");
+    }
+
+    function addToCart(productId) {
+      const existing = cart.find((item) => item.id === productId);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        const product = products.find((p) => p.id === productId);
+        cart.push({ ...product, qty: 1 });
+      }
+      renderCart();
+      showMessage("已加入購物車");
+    }
+
+    function changeQty(productId, delta) {
+      const item = cart.find((p) => p.id === productId);
+      if (!item) return;
+
+      item.qty += delta;
+      if (item.qty <= 0) {
+        cart = cart.filter((p) => p.id !== productId);
+      }
+      renderCart();
+    }
+
+    function removeItem(productId) {
+      cart = cart.filter((p) => p.id !== productId);
+      renderCart();
+    }
+
+    function renderCart() {
+      if (cart.length === 0) {
+        cartContainer.innerHTML = '<p class="cart-empty">你尚未加入任何產品。</p>';
+      } else {
+        cartContainer.innerHTML = `
+          <div class="cart-items">
+            ${cart.map((item) => `
+              <div class="cart-item">
+                <div class="cart-item-top">
+                  <div>
+                    <p class="cart-item-name">${item.name}</p>
+                    <div class="cart-item-spec">${item.spec}</div>
+                    <div class="cart-item-meta">${formatPrice(item.price)} × ${item.qty} = ${formatPrice(item.price * item.qty)}</div>
+                  </div>
+                  <button class="remove-btn" onclick="removeItem(${item.id})">刪除</button>
+                </div>
+                <div class="qty-controls">
+                  <button class="qty-btn" onclick="changeQty(${item.id}, -1)">-</button>
+                  <span class="qty-number">${item.qty}</span>
+                  <button class="qty-btn" onclick="changeQty(${item.id}, 1)">+</button>
+                </div>
+              </div>
+            `).join("")}
+          </div>
+        `;
+      }
+
+      const itemCount = cart.reduce((sum, item) => sum + item.qty, 0);
+      const subtotal = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+
+      cartCount.textContent = `${itemCount} 件`;
+      navCartCount.textContent = itemCount;
+      itemCountEl.textContent = itemCount;
+      subtotalEl.textContent = formatPrice(subtotal);
+      totalEl.textContent = formatPrice(subtotal);
+    }
+
+    function checkoutWhatsApp() {
+      if (cart.length === 0) {
+        const defaultMessage = "你好，我想查詢彩雲國貨有限公司的產品 / 中醫服務。";
+        const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(defaultMessage)}`;
+        window.open(url, "_blank");
+        return;
+      }
+
+      const customerName = document.getElementById("customerName").value.trim();
+      const customerPhone = document.getElementById("customerPhone").value.trim();
+      const customerNote = document.getElementById("customerNote").value.trim();
+
+      const itemLines = cart.map((item, index) => {
+        const lineTotal = item.price * item.qty;
+        return `${index + 1}. ${item.name}（${item.spec}）x ${item.qty} - ${formatPrice(lineTotal)}`;
+      }).join("\n");
+
+      const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+
+      const message =
+`你好，我想查詢 / 訂購以下產品：
+
+${itemLines}
+
+總額：${formatPrice(total)}
+
+姓名：${customerName || "未提供"}
+電話：${customerPhone || "未提供"}
+備註：${customerNote || "無"}
+
+麻煩確認存貨、規格及安排，謝謝。`;
+
+      const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+      window.open(url, "_blank");
+    }
+
+    function scrollToProducts() {
+      const shop = document.getElementById("shop");
+      if (shop) shop.scrollIntoView({ behavior: "smooth" });
+    }
+
+    function showMessage(text) {
+      const existing = document.getElementById("siteMessage");
+      if (existing) existing.remove();
+
+      const box = document.createElement("div");
+      box.id = "siteMessage";
+      box.textContent = text;
+      box.style.position = "fixed";
+      box.style.left = "50%";
+      box.style.bottom = "84px";
+      box.style.transform = "translateX(-50%)";
+      box.style.background = "#17382b";
+      box.style.color = "#fff";
+      box.style.padding = "12px 16px";
+      box.style.borderRadius = "12px";
+      box.style.boxShadow = "0 10px 24px rgba(0,0,0,0.18)";
+      box.style.zIndex = "9999";
+      box.style.fontSize = "14px";
+      document.body.appendChild(box);
+
+      setTimeout(() => {
+        box.remove();
+      }, 1800);
+    }
+
+    searchInput.addEventListener("input", renderProducts);
+    categoryFilter.addEventListener("change", renderProducts);
+
+    initCategories();
+    renderProducts();
+    renderCart();
+  </script>
+</body>
+</html>
