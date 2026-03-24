@@ -2175,37 +2175,49 @@
         <div class="guide-grid">
           <div class="card guide-card">
             <h3>產品資料格式</h3>
-            <pre><code>{
- {
-  id: 1,
-  name: "北京同仁堂清音丸",
-  spec: "10粒",
-  category: "中成藥及保健藥",
-  price: 88,
-  image: "images/北京同仁堂清音丸.jpg",
-  imageText: "清熱",
-  description: "功能主治：清熱利咽，生津潤燥。用於肺熱津虧引起的咽喉不利，口舌乾燥，聲啞失音等症。"
-},
-{
-  id: 2,
-  name: "北京同仁堂同仁大活絡丹",
-  spec: "3.6克 x 10粒",
-  category: "中成藥及保健藥",
-  price: 338,
-  image: "images/北京同仁堂同仁大活絡丹.jpg",
-  imageText: "中成藥",
-  description: "功能主治：袪風舒筋、活絡、除濕。用於風寒濕痺引起的肢體疼痛、手足麻木、言語不清。"
-},
-{
-  id: 3,
-  name: "北京同仁堂板藍根沖劑",
-  spec: "12克 x 6袋 / 盒",
-  category: "中成藥及保健藥",
-  price: 26,
-  image: "images/北京同仁堂板藍根沖劑.jpg",
-  imageText: "沖劑",
-  description: "功能主治：清熱解毒、涼血利咽。"
-}
+            <pre><code>const products = [
+  {
+    id: 1,
+    name: "北京同仁堂清音丸",
+    spec: "10粒",
+    category: "中成藥及保健藥",
+    price: 88,
+    image: "images/qingyinwan.jpg",
+    imageText: "清熱",
+    description: "功能主治：清熱利咽，生津潤燥。用於肺熱津虧引起的咽喉不利，口舌乾燥，聲啞失音等症。"
+  },
+  {
+    id: 2,
+    name: "北京同仁堂同仁大活絡丹",
+    spec: "3.6克 x 10粒",
+    category: "中成藥及保健藥",
+    price: 338,
+    image: "images/dahuoluodan.jpg",
+    imageText: "中成藥",
+    description: "功能主治：袪風舒筋、活絡、除濕。用於風寒濕痺引起的肢體疼痛、手足麻木、言語不清。"
+  },
+  {
+    id: 3,
+    name: "北京同仁堂板藍根沖劑",
+    spec: "12克 x 6袋 / 盒",
+    category: "中成藥及保健藥",
+    price: 26,
+    image: "images/banlangen.jpg",
+    imageText: "沖劑",
+    description: "功能主治：清熱解毒、涼血利咽。"
+  }
+];</code></pre>
+          </div>
+
+          <div class="card guide-card">
+            <h3>圖片放置方式</h3>
+            <pre><code>網站根目錄
+├─ index.html
+└─ images
+   ├─ qingyinwan.jpg
+   ├─ dahuoluodan.jpg
+   └─ banlangen.jpg</code></pre>
+          </div>
 
           <div class="card guide-card">
             <h3>注意事項</h3>
@@ -2291,63 +2303,33 @@
     const products = [
       {
         id: 1,
-        name: "花旗參片",
-        spec: "100克 / 包",
-        category: "參茸海味",
-        price: 380,
-        image: "images/american-ginseng.jpg",
-        imageText: "參",
-        description: "適合日常保養及送禮，方便查詢不同等級與規格。"
+        name: "北京同仁堂清音丸",
+        spec: "10粒",
+        category: "中成藥及保健藥",
+        price: 88,
+        image: "images/qingyinwan.jpg",
+        imageText: "清熱",
+        description: "功能主治：清熱利咽，生津潤燥。用於肺熱津虧引起的咽喉不利，口舌乾燥，聲啞失音等症。"
       },
       {
         id: 2,
-        name: "川貝",
-        spec: "37.5克 / 包",
-        category: "中藥材",
-        price: 220,
-        image: "images/fritillaria.jpg",
-        imageText: "貝",
-        description: "常見中藥材，可按需要查詢不同規格及選購方向。"
+        name: "北京同仁堂同仁大活絡丹",
+        spec: "3.6克 x 10粒",
+        category: "中成藥及保健藥",
+        price: 338,
+        image: "images/dahuoluodan.jpg",
+        imageText: "中成藥",
+        description: "功能主治：袪風舒筋、活絡、除濕。用於風寒濕痺引起的肢體疼痛、手足麻木、言語不清。"
       },
       {
         id: 3,
-        name: "石斛",
-        spec: "75克 / 包",
-        category: "參茸海味",
-        price: 460,
-        image: "images/dendrobium.jpg",
-        imageText: "斛",
-        description: "適合日常保養人士了解，可查詢包裝與等級。"
-      },
-      {
-        id: 4,
-        name: "高麗參",
-        spec: "150克 / 盒",
-        category: "參茸海味",
-        price: 680,
-        image: "images/korean-ginseng.jpg",
-        imageText: "參",
-        description: "精選參類產品，適合作送禮及日常進補查詢。"
-      },
-      {
-        id: 5,
-        name: "保健湯包",
-        spec: "1包",
-        category: "保健產品",
-        price: 98,
-        image: "images/soup-pack.jpg",
-        imageText: "湯",
-        description: "方便日常煲湯使用，適合家庭常備。"
-      },
-      {
-        id: 6,
-        name: "海味禮盒",
-        spec: "禮盒裝",
-        category: "參茸海味",
-        price: 880,
-        image: "images/seafood-gift-box.jpg",
-        imageText: "禮",
-        description: "適合節日送禮及節慶需要，歡迎查詢款式。"
+        name: "北京同仁堂板藍根沖劑",
+        spec: "12克 x 6袋 / 盒",
+        category: "中成藥及保健藥",
+        price: 26,
+        image: "images/banlangen.jpg",
+        imageText: "沖劑",
+        description: "功能主治：清熱解毒、涼血利咽。"
       }
     ];
 
@@ -2366,8 +2348,8 @@
     const categoryFilter = document.getElementById("categoryFilter");
     const menuToggle = document.getElementById("menuToggle");
     const mobileMenu = document.getElementById("mobileMenu");
-    const navLinks = document.querySelectorAll('.nav-menu a');
-    const sections = document.querySelectorAll('main section[id]');
+    const navLinks = document.querySelectorAll(".nav-menu a");
+    const sections = document.querySelectorAll("main section[id]");
 
     function formatPrice(price) {
       return "HK$" + price.toLocaleString("en-HK");
@@ -2572,10 +2554,7 @@ ${itemLines}
       menuToggle.setAttribute("aria-expanded", String(isOpen));
       menuToggle.innerHTML = isOpen
         ? `<svg viewBox="0 0 24 24"><use href="#icon-close"></use></svg>`
-        : `<svg viewBox="0 0 24 0"><use href="#icon-menu"></use></svg>`;
-      if (!isOpen) {
-        menuToggle.innerHTML = `<svg viewBox="0 0 24 24"><use href="#icon-menu"></use></svg>`;
-      }
+        : `<svg viewBox="0 0 24 24"><use href="#icon-menu"></use></svg>`;
     }
 
     function closeMobileMenu() {
@@ -2624,6 +2603,12 @@ ${itemLines}
     renderProducts();
     renderCart();
     updateActiveNav();
+
+    window.addToCart = addToCart;
+    window.changeQty = changeQty;
+    window.removeItem = removeItem;
+    window.checkoutWhatsApp = checkoutWhatsApp;
+    window.scrollToProducts = scrollToProducts;
   </script>
 </body>
 </html>
