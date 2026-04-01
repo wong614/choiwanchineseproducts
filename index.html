@@ -1409,6 +1409,33 @@
         display: none;
       }
     }
+    .category-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.category-card {
+  background: rgba(255,255,255,0.9);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 30px;
+  text-align: center;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: 0.25s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--border-strong);
+}
+
+.back-btn {
+  margin-bottom: 20px;
+}
   </style>
 </head>
 <body>
@@ -1778,7 +1805,12 @@
               </div>
             </div>
 
-            <div class="products-grid" id="productsGrid"></div>
+            <div id="categoryView" class="category-grid"></div>  
+            
+            <div id="productView" style="display:none;">
+              <button class="btn btn-secondary back-btn" onclick="showCategories()">← 返回分類</button>   
+              <div class="products-grid" id="productsGrid"></div> 
+            </div>
 
             <div class="cart-note" style="margin-top: 20px;">
               提示：如某產品有不同等級、不同包裝或其他份量，可先在備註中說明，我們會再為你確認。
@@ -2227,6 +2259,29 @@
 
   <script>
     const products = [
+      const categoryView = document.getElementById("categoryView");
+      const productView = document.getElementById("productView");
+
+    function renderCategories() {
+  const categories = [...new Set(products.map(p => p.category))];
+
+  categoryView.innerHTML = categories.map(cat => `
+    <div class="category-card" onclick="showProductsByCategory('${cat}')">
+      ${cat}
+    </div>
+  `).join("");
+}
+    function showProductsByCategory(category) {
+  categoryFilter.value = category;
+  renderProducts();
+
+  categoryView.style.display = "none";
+  productView.style.display = "block";
+}
+    function showCategories() {
+  productView.style.display = "none";
+  categoryView.style.display = "grid";
+}
       {
         id: 1,
         name: "北京同仁堂清音丸",
@@ -2756,7 +2811,7 @@ ${itemLines}
     });
 
     initCategories();
-    renderProducts();
+    renderCategories();
     renderCart();
     updateActiveNav();
 
