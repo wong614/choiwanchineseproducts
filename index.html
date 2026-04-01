@@ -2530,6 +2530,7 @@ const products = [
 ========================= */
 const whatsappNumber = "85261243849";
 let cart = [];
+const CART_STORAGE_KEY = "choiyun_cart";
 
 /* =========================
    DOM 取得
@@ -2552,6 +2553,24 @@ const categoryFilter = document.getElementById("categoryFilter");
 ========================= */
 function formatPrice(price) {
   return "HK$" + price.toLocaleString("en-HK");
+}
+/* =========================
+   LocalStorage 功能
+========================= */
+
+function saveCartToStorage() {
+  localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cart));
+}
+
+function loadCartFromStorage() {
+  const stored = localStorage.getItem(CART_STORAGE_KEY);
+  if (stored) {
+    try {
+      cart = JSON.parse(stored);
+    } catch (e) {
+      cart = [];
+    }
+  }
 }
 
 /* =========================
@@ -2693,6 +2712,8 @@ function renderCart() {
   subtotalEl.textContent = formatPrice(total);
   totalEl.textContent = formatPrice(total);
   itemCountEl.textContent = itemCount;
+
+  saveCartToStorage();
 }
 
 /* =========================
@@ -2722,6 +2743,7 @@ categoryFilter.addEventListener("change", renderProducts);
 ========================= */
 initCategories();
 renderCategories();
+loadCartFromStorage();
 renderCart();
 
 window.addToCart = addToCart;
@@ -2731,6 +2753,11 @@ window.showCategories = showCategories;
 window.showProductsByCategory = showProductsByCategory;
 window.checkoutWhatsApp = checkoutWhatsApp;
 window.scrollToProducts = scrollToProducts;
+function scrollToProducts() {
+  document.getElementById("shop").scrollIntoView({
+    behavior: "smooth"
+  });
+}
 </script>
 </body>
 </html>
