@@ -2257,12 +2257,317 @@
     <a href="https://maps.app.goo.gl/rowmVyGq5wBjGCpk8" target="_blank" rel="noopener noreferrer" class="fixed-btn map">導航</a>
   </div>
 
-  <script>
-    const products = [
-      const categoryView = document.getElementById("categoryView");
-      const productView = document.getElementById("productView");
+<script>
+/* =========================
+   產品資料
+========================= */
+const products = [
+  {
+    id: 1,
+    name: "北京同仁堂清音丸",
+    spec: "10粒/盒",
+    category: "清熱解毒",
+    price: 88,
+    image: "qingyinwan.jpg",
+    imageText: "清",
+    description: "清熱利咽，生津潤燥。"
+  },
+  {
+    id: 2,
+    name: "北京同仁堂同仁大活絡丹",
+    spec: "3.6克 x 10粒",
+    category: "舒筋活絡",
+    price: 338,
+    image: "dahuoluodan.jpg",
+    imageText: "大",
+    description: "袪風舒筋、活絡、除濕。"
+  },
+  {
+    id: 3,
+    name: "北京同仁堂板藍根沖劑",
+    spec: "12克 x 6袋/盒",
+    category: "感冒發燒",
+    price: 35,
+    image: "banlangen.jpg",
+    imageText: "板",
+    description: "清熱解毒、涼血利咽。"
+  },
+  {
+    id: 4,
+    name: "北京同仁堂白鳳丸",
+    spec: "5克 x 10丸/盒",
+    category: "補氣血養生",
+    price: 158,
+    image: "baifengwan.jpg",
+    imageText: "白",
+    description: "補氣、養血、調經。主治氣血兩虧引起︰身體虛弱、腰膝酸軟"
+  },
+  {
+    id: 5,
+    name: "北京同仁堂藿香正氣片",
+    spec: "12瓶 X 12片",
+    category: "感冒發燒",
+    price: 55,
+     image: "huoxiang.jpg",
+    imageText: "藿",
+    description: "解表化濕、理氣和中。用於外感風寒、內傷濕滯，頭痛昏重，脘腹脹痛，嘔吐泄瀉。"
+  },
+  {
+    id: 6,
+    name: "北京同仁堂銀翹解毒片（素片）",
+    spec: "12瓶 X 8片",
+    category: "感冒發燒",
+    price: 55,
+    image: "yingqiao.jpg",
+    imageText: "銀",
+    description: "辛涼解表，清熱解毒。用於風熱感冒，發熱頭痛，咳嗽，口乾，咽喉疼痛。"
+   },
+   {
+    id: 7,
+    name: "北京同仁堂人參鹿茸丸",
+    spec: "9克 x 6丸",
+    category: "補氣血養生",
+    price: 188,
+    image: "renshen.jpg",
+    imageText: "人",
+    description: "滋腎、補血。用於氣血兩虧，腰腿酸軟。"
+   },
+   {
+    id: 8,
+    name: "北京同仁堂知柏地黃丸",
+    spec: "600粒",
+    category: "補腎壯陽",
+    price: 72,
+    image: "ZhiBaiDiHuang.jpg",
+    imageText: "知",
+    description: "滋陰降火。用於陰虛火旺、潮熱盜汗、口乾咽痛、腰膝酸軟、頭暈目眩"
+   },
+   {
+    id: 9,
+    name: "北京同仁堂石斛夜光丸",
+    spec: "292粒",
+    category: "補氣血養生",
+    price: 58,
+    image: "shihuyeguang.jpg",
+    imageText: "石",
+    description: "用於肝腎兩虧，陰虛火旺，內障目暗，視物昏花。(詳見説明書)"
+    },
+    {
+    id: 10,
+    name: "北京同仁堂感冒葛根湯沖劑",
+    spec: "12克 x 6袋/盒",
+    category: "感冒發燒",
+    price: 35,
+    image: "gegentang.jpg",
+    imageText: "葛",
+    description: "功能主治:解表發汗、疏風散寒。用於感冒身熱、頭痛、咳嗽、鼻塞、流涕。"
+    },
+    {
+    id: 11,
+    name: "北京同仁堂杞菊地黃丸",
+    spec: "240粒",
+    category: "補腎壯陽",
+    price: 40,
+    image: "qijudihuang.jpg",
+    imageText: "杞",
+    description: "滋腎養肝。用於肝腎陰虧，眩暈、羞明畏光、迎風流淚、視物昏花。"
+    },
+    {
+    id: 12,
+    name: "北京同仁堂六味地黃丸濃縮丸",
+    spec: "240粒",
+    category: "補腎壯陽",
+    price: 72,
+    image: "liuweidihuang.jpg",
+    imageText: "六",
+    description: "滋陰補腎。用於腎陰虧損，頭暈，腰膝酸軟，骨蒸潮熱，盜汗，消渴。"
+    },
+    {
+    id: 13,
+    name: "北京同仁堂感冒止咳沖劑",
+    spec: "12克 x 6袋/盒",
+    category: "感冒發燒",
+    price: 35,
+    image: "ganmaozhike.jpg",
+    imageText: "感",
+    description: "清熱解表、止咳化痰。用於感冒發熱、頭痛鼻塞、傷風咳嗽、咽喉腫痛、四肢怠倦。"
+    },
+    {
+    id: 14,
+    name: "北京同仁堂牛黃清心丸",
+    spec: "每丸重3克 x 10丸/盒",
+    category: "心腦血管",
+    price: 380,
+    image: "niuhuangqingxin.jpg",
+    imageText: "牛",
+    description: "益氣養血、鎮驚安神、化痰熄風。用於氣血不足、痰熱擾亂心神引起胸中鬱熱，容易受到驚嚇，煩躁不安，頭目眩暈，痰涎壅盛。"
+    },
+    {
+    id: 15,
+    name: "北京同仁堂六味地黃丸",
+    spec: "600粒",
+    category: "補腎壯陽",
+    price: 72,
+    image: "liuweidihuang600.jpg",
+    imageText: "六",
+    description: "滋陰補腎。用於腎陰虧損，腰膝酸軟，骨蒸潮熱，頭暈盜汗。"
+    },
+    {
+    id: 16,
+    name: "北京同仁堂感冒清熱沖劑",
+    spec: "12克 x 6袋/盒",
+    category: "感冒發燒",
+    price: 35,
+    image: "ganmaoqingre.jpg",
+    imageText: "感",
+    description: "疏風散寒、解表清熱。用於風寒感冒、頭痛發熱、惡寒身痛、鼻流清涕、咳嗽咽乾。"
+    },
+    {
+    id: 17,
+    name: "北京同仁堂同仁六神丸",
+    spec: "100粒",
+    category: "清熱解毒",
+    price: 45,
+    image: "liushen.jpg",
+    imageText: "六",
+    description: "清熱解毒、消腫止痛。用於肺胃熱盛引起: 咽喉腫痛，爛喉丹痧，單雙乳蛾，水漿不下，口舌糜爛，腮項腫痛。"
+    },
+    {
+    id: 18,
+    name: "北京同仁堂保嬰丹",
+    spec: "0.36克 x 6瓶/盒",
+    category: "感冒發燒",
+    price: 85,
+    image: "baoyingdan.jpg",
+    imageText: "保",
+    description: "疏風散寒、清熱袪痰。用於痰熱內閉，外感風寒引起的面赤身熱、痰多氣促、夜啼驚跳，睡臥不安。"
+    },
+    {
+    id: 19,
+    name: "北京同仁堂金匱腎氣丸250粒",
+    spec: "250粒",
+    category: "補腎壯陽",
+    price: 40,
+    image: "jinkuishenqi.jpg",
+    imageText: "金",
+    description: "溫補腎陽，化氣行水。用於腎虛、腰膝腿軟，畏寒肢冷。"
+    },
+    {
+    id: 20,
+    name: "北京同仁堂藿香正氣水",
+    spec: "10毫升 x 12瓶/盒",
+    category: "感冒發燒",
+    price: 70,
+    image: "zhengqishui.jpg",
+    imageText: "藿",
+    description: "袪暑化濕，解表和中。用於內蘊濕滯，受暑感寒引起的惡寒發熱，頭痛無汗，四肢酸懶，惡心嘔吐，腹痛腹瀉。"
+    },
+    {
+    id: 21,
+    name: "北京同仁堂北京藿香正氣片（糖衣）",
+    spec: "100片",
+    category: "感冒發燒",
+    price: 55,
+    image: "zhengqipian.jpg",
+    imageText: "藿",
+    description: "解表化濕、理氣和中。用於外感風寒、內傷濕滯、頭痛昏重、脘腹脹痛、嘔吐泄瀉。"
+    },
+    {
+    id: 22,
+    name: "北京同仁堂健步虎潛丸",
+    spec: "1000粒",
+    category: "補腎壯陽",
+    price: 780,
+    image: "huqianwan1000.jpg",
+    imageText: "健",
+    description: "養血、散風、通絡。主治腎氣虛損引起的筋骨痿軟、四肢麻木、腰腿痠痛、足膝無力、行步艱難"
+    },
+    {
+    id: 23,
+    name: "北京同仁堂健步虎潛丸",
+    spec: "200粒",
+    category: "補腎壯陽",
+    price: 148,
+    image: "huqianwan200.jpg",
+    imageText: "健",
+    description: "養血、散風、通絡。主治腎氣虛損引起的筋骨痿軟、四肢麻木、腰腿痠痛、足膝無力、行步艱難"
+    },
+    {
+    id: 24,
+    name: "北京同仁堂北京牛黃解毒片",
+    spec: "100片",
+    category: "清熱解毒",
+    price: 55,
+    image: "jiedupian100.jpg",
+    imageText: "牛",
+    description: "清熱解毒,散風止痛。用於肺胃蘊熱引起的頭目眩暈，胃火口瘡，風火牙痛，咽部疼痛，大便秘結，皮膚刺癢。"
+    },
+    {
+    id: 25,
+    name: "北京同仁堂北京牛黃解毒片",
+    spec: "50片",
+    category: "清熱解毒",
+    price: 30,
+    image: "jiedupian50.jpg",
+    imageText: "牛",
+    description: "清熱解毒,散風止痛。用於肺胃蘊熱引起的頭目眩暈，胃火口瘡，風火牙痛，咽部疼痛，大便秘結，皮膚刺癢。"
+    },
+    {
+    id: 26,
+    name: "北京同仁堂安宮牛黃丸",
+    spec: "1丸",
+    category: "心腦血管",
+    price: 1280,
+    image: "niuhuangwan.jpg",
+    imageText: "牛",
+    description: "【同仁堂】安宮牛黃丸依照清代著名溫病學家吳鞠通《溫病條辨》之古方，配合同仁堂精良炮製方法，產品專門應對突發的心腦血管健康問題，傳承至今，造福多代廣大民眾。 有清熱解毒，鎮驚開竅的功效。用於熱病，邪入心包，高熱驚厥，神昏譫語。"
+    }
+  
+];
 
-    function renderCategories() {
+/* =========================
+   基本設定
+========================= */
+const whatsappNumber = "85261243849";
+let cart = [];
+
+/* =========================
+   DOM 取得
+========================= */
+const productsGrid = document.getElementById("productsGrid");
+const categoryView = document.getElementById("categoryView");
+const productView = document.getElementById("productView");
+const cartContainer = document.getElementById("cartContainer");
+const cartCount = document.getElementById("cartCount");
+const navCartCount = document.getElementById("navCartCount");
+const mobileCartCount = document.getElementById("mobileCartCount");
+const subtotalEl = document.getElementById("subtotal");
+const totalEl = document.getElementById("total");
+const itemCountEl = document.getElementById("itemCount");
+const searchInput = document.getElementById("searchInput");
+const categoryFilter = document.getElementById("categoryFilter");
+
+/* =========================
+   工具函數
+========================= */
+function formatPrice(price) {
+  return "HK$" + price.toLocaleString("en-HK");
+}
+
+/* =========================
+   初始化分類下拉
+========================= */
+function initCategories() {
+  const categories = ["全部", ...new Set(products.map(p => p.category))];
+  categoryFilter.innerHTML = categories
+    .map(cat => `<option value="${cat}">${cat === "全部" ? "全部分類" : cat}</option>`)
+    .join("");
+}
+
+/* =========================
+   分類畫面
+========================= */
+function renderCategories() {
   const categories = [...new Set(products.map(p => p.category))];
 
   categoryView.innerHTML = categories.map(cat => `
@@ -2270,556 +2575,161 @@
       ${cat}
     </div>
   `).join("");
+
+  categoryView.style.display = "grid";
+  productView.style.display = "none";
 }
-    function showProductsByCategory(category) {
+
+function showProductsByCategory(category) {
   categoryFilter.value = category;
   renderProducts();
-
   categoryView.style.display = "none";
   productView.style.display = "block";
 }
-    function showCategories() {
+
+function showCategories() {
   productView.style.display = "none";
   categoryView.style.display = "grid";
 }
-      {
-        id: 1,
-        name: "北京同仁堂清音丸",
-        spec: "10粒/盒",
-        category: "清熱解毒",
-        price: 88,
-        image: "qingyinwan.jpg",
-        imageText: "清",
-        description: "功能主治：清熱利咽，生津潤燥。用於肺熱津虧引起的咽喉不利，口舌乾燥，聲啞失音等症。"
-      },
-      {
-        id: 2,
-        name: "北京同仁堂同仁大活絡丹",
-        spec: "3.6克 x 10粒",
-        category: "舒筋活絡",
-        price: 338,
-        image: "dahuoluodan.jpg",
-        imageText: "大",
-        description: "功能主治：袪風舒筋、活絡、除濕。用於風寒濕痺引起的肢體疼痛、手足麻木、言語不清。"
-      },
-      {
-        id: 3,
-        name: "北京同仁堂板藍根沖劑",
-        spec: "12克 x 6袋/盒",
-        category: "感冒發燒",
-        price: 35,
-        image: "banlangen.jpg",
-        imageText: "板",
-        description: "功能主治：清熱解毒、涼血利咽。"
-      },
-      {
-        id: 4,
-        name: "北京同仁堂白鳳丸",
-        spec: "5克 x 10丸/盒",
-        category: "補氣血養生",
-        price: 158,
-        image: "baifengwan.jpg",
-        imageText: "白",
-        description: "補氣、養血、調經。主治氣血兩虧引起︰身體虛弱、腰膝酸軟"
-      },
-      {
-        id: 5,
-        name: "北京同仁堂藿香正氣片",
-        spec: "12瓶 X 12片",
-        category: "感冒發燒",
-        price: 55,
-        image: "huoxiang.jpg",
-        imageText: "藿",
-        description: "解表化濕、理氣和中。用於外感風寒、內傷濕滯，頭痛昏重，脘腹脹痛，嘔吐泄瀉。"
-      },
-      {
-        id: 6,
-        name: "北京同仁堂銀翹解毒片（素片）",
-        spec: "12瓶 X 8片",
-        category: "感冒發燒",
-        price: 55,
-        image: "yingqiao.jpg",
-        imageText: "銀",
-        description: "辛涼解表，清熱解毒。用於風熱感冒，發熱頭痛，咳嗽，口乾，咽喉疼痛。"
-      },
-      {
-        id: 7,
-        name: "北京同仁堂人參鹿茸丸",
-        spec: "9克 x 6丸",
-        category: "補氣血養生",
-        price: 188,
-        image: "renshen.jpg",
-        imageText: "人",
-        description: "滋腎、補血。用於氣血兩虧，腰腿酸軟。"
-      },
-      {
-        id: 8,
-        name: "北京同仁堂知柏地黃丸",
-        spec: "600粒",
-        category: "補腎壯陽",
-        price: 72,
-        image: "ZhiBaiDiHuang.jpg",
-        imageText: "知",
-        description: "滋陰降火。用於陰虛火旺、潮熱盜汗、口乾咽痛、腰膝酸軟、頭暈目眩"
-      },
-      {
-        id: 9,
-        name: "北京同仁堂石斛夜光丸",
-        spec: "292粒",
-        category: "補氣血養生",
-        price: 58,
-        image: "shihuyeguang.jpg",
-        imageText: "石",
-        description: "用於肝腎兩虧，陰虛火旺，內障目暗，視物昏花。(詳見説明書)"
-      },
-      {
-        id: 10,
-        name: "北京同仁堂感冒葛根湯沖劑",
-        spec: "12克 x 6袋/盒",
-        category: "感冒發燒",
-        price: 35,
-        image: "gegentang.jpg",
-        imageText: "葛",
-        description: "功能主治:解表發汗、疏風散寒。用於感冒身熱、頭痛、咳嗽、鼻塞、流涕。"
-      },
-      {
-        id: 11,
-        name: "北京同仁堂杞菊地黃丸",
-        spec: "240粒",
-        category: "補腎壯陽",
-        price: 40,
-        image: "qijudihuang.jpg",
-        imageText: "杞",
-        description: "滋腎養肝。用於肝腎陰虧，眩暈、羞明畏光、迎風流淚、視物昏花。"
-      },
-      {
-        id: 12,
-        name: "北京同仁堂六味地黃丸濃縮丸",
-        spec: "240粒",
-        category: "補腎壯陽",
-        price: 72,
-        image: "liuweidihuang.jpg",
-        imageText: "六",
-        description: "滋陰補腎。用於腎陰虧損，頭暈，腰膝酸軟，骨蒸潮熱，盜汗，消渴。"
-      },
-      {
-        id: 13,
-        name: "北京同仁堂感冒止咳沖劑",
-        spec: "12克 x 6袋/盒",
-        category: "感冒發燒",
-        price: 35,
-        image: "ganmaozhike.jpg",
-        imageText: "感",
-        description: "清熱解表、止咳化痰。用於感冒發熱、頭痛鼻塞、傷風咳嗽、咽喉腫痛、四肢怠倦。"
-      },
-      {
-        id: 14,
-        name: "北京同仁堂牛黃清心丸",
-        spec: "每丸重3克 x 10丸/盒",
-        category: "心腦血管",
-        price: 380,
-        image: "niuhuangqingxin.jpg",
-        imageText: "牛",
-        description: "益氣養血、鎮驚安神、化痰熄風。用於氣血不足、痰熱擾亂心神引起胸中鬱熱，容易受到驚嚇，煩躁不安，頭目眩暈，痰涎壅盛。"
-      },
-      {
-        id: 15,
-        name: "北京同仁堂六味地黃丸",
-        spec: "600粒",
-        category: "補腎壯陽",
-        price: 72,
-        image: "liuweidihuang600.jpg",
-        imageText: "六",
-        description: "滋陰補腎。用於腎陰虧損，腰膝酸軟，骨蒸潮熱，頭暈盜汗。"
-      },
-      {
-        id: 16,
-        name: "北京同仁堂感冒清熱沖劑",
-        spec: "12克 x 6袋/盒",
-        category: "感冒發燒",
-        price: 35,
-        image: "ganmaoqingre.jpg",
-        imageText: "感",
-        description: "疏風散寒、解表清熱。用於風寒感冒、頭痛發熱、惡寒身痛、鼻流清涕、咳嗽咽乾。"
-      },
-      {
-        id: 17,
-        name: "北京同仁堂同仁六神丸",
-        spec: "100粒",
-        category: "清熱解毒",
-        price: 45,
-        image: "liushen.jpg",
-        imageText: "六",
-        description: "清熱解毒、消腫止痛。用於肺胃熱盛引起: 咽喉腫痛，爛喉丹痧，單雙乳蛾，水漿不下，口舌糜爛，腮項腫痛。"
-      },
-      {
-        id: 18,
-        name: "北京同仁堂保嬰丹",
-        spec: "0.36克 x 6瓶/盒",
-        category: "感冒發燒",
-        price: 85,
-        image: "baoyingdan.jpg",
-        imageText: "保",
-        description: "疏風散寒、清熱袪痰。用於痰熱內閉，外感風寒引起的面赤身熱、痰多氣促、夜啼驚跳，睡臥不安。"
-      },
-      {
-        id: 19,
-        name: "北京同仁堂金匱腎氣丸250粒",
-        spec: "250粒",
-        category: "補腎壯陽",
-        price: 40,
-        image: "jinkuishenqi.jpg",
-        imageText: "金",
-        description: "溫補腎陽，化氣行水。用於腎虛、腰膝腿軟，畏寒肢冷。"
-      },
-      {
-        id: 20,
-        name: "北京同仁堂藿香正氣水",
-        spec: "10毫升 x 12瓶/盒",
-        category: "感冒發燒",
-        price: 70,
-        image: "zhengqishui.jpg",
-        imageText: "藿",
-        description: "袪暑化濕，解表和中。用於內蘊濕滯，受暑感寒引起的惡寒發熱，頭痛無汗，四肢酸懶，惡心嘔吐，腹痛腹瀉。"
-      },
-      {
-        id: 21,
-        name: "北京同仁堂北京藿香正氣片（糖衣）",
-        spec: "100片",
-        category: "感冒發燒",
-        price: 55,
-        image: "zhengqipian.jpg",
-        imageText: "藿",
-        description: "解表化濕、理氣和中。用於外感風寒、內傷濕滯、頭痛昏重、脘腹脹痛、嘔吐泄瀉。"
-      },
-      {
-        id: 22,
-        name: "北京同仁堂健步虎潛丸",
-        spec: "1000粒",
-        category: "補腎壯陽",
-        price: 780,
-        image: "huqianwan1000.jpg",
-        imageText: "健",
-        description: "養血、散風、通絡。主治腎氣虛損引起的筋骨痿軟、四肢麻木、腰腿痠痛、足膝無力、行步艱難"
-      },
-      {
-        id: 23,
-        name: "北京同仁堂健步虎潛丸",
-        spec: "200粒",
-        category: "補腎壯陽",
-        price: 148,
-        image: "huqianwan200.jpg",
-        imageText: "健",
-        description: "養血、散風、通絡。主治腎氣虛損引起的筋骨痿軟、四肢麻木、腰腿痠痛、足膝無力、行步艱難"
-      },
-      {
-        id: 24,
-        name: "北京同仁堂北京牛黃解毒片",
-        spec: "100片",
-        category: "清熱解毒",
-        price: 55,
-        image: "jiedupian100.jpg",
-        imageText: "牛",
-        description: "清熱解毒,散風止痛。用於肺胃蘊熱引起的頭目眩暈，胃火口瘡，風火牙痛，咽部疼痛，大便秘結，皮膚刺癢。"
-      },
-      {
-        id: 25,
-        name: "北京同仁堂北京牛黃解毒片",
-        spec: "50片",
-        category: "清熱解毒",
-        price: 30,
-        image: "jiedupian50.jpg",
-        imageText: "牛",
-        description: "清熱解毒,散風止痛。用於肺胃蘊熱引起的頭目眩暈，胃火口瘡，風火牙痛，咽部疼痛，大便秘結，皮膚刺癢。"
-      },
-      {
-        id: 26,
-        name: "北京同仁堂安宮牛黃丸",
-        spec: "1丸",
-        category: "心腦血管",
-        price: 1280,
-        image: "niuhuangwan.jpg",
-        imageText: "牛",
-        description: "【同仁堂】安宮牛黃丸依照清代著名溫病學家吳鞠通《溫病條辨》之古方，配合同仁堂精良炮製方法，產品專門應對突發的心腦血管健康問題，傳承至今，造福多代廣大民眾。 有清熱解毒，鎮驚開竅的功效。用於熱病，邪入心包，高熱驚厥，神昏譫語。"
-      },
-    ];
 
-    const whatsappNumber = "85261243849";
-    let cart = [];
+/* =========================
+   顯示產品
+========================= */
+function renderProducts() {
+  const keyword = searchInput.value.trim().toLowerCase();
+  const selectedCategory = categoryFilter.value;
 
-    const productsGrid = document.getElementById("productsGrid");
-    const cartContainer = document.getElementById("cartContainer");
-    const cartCount = document.getElementById("cartCount");
-    const navCartCount = document.getElementById("navCartCount");
-    const mobileCartCount = document.getElementById("mobileCartCount");
-    const subtotalEl = document.getElementById("subtotal");
-    const totalEl = document.getElementById("total");
-    const itemCountEl = document.getElementById("itemCount");
-    const searchInput = document.getElementById("searchInput");
-    const categoryFilter = document.getElementById("categoryFilter");
-    const menuToggle = document.getElementById("menuToggle");
-    const mobileMenu = document.getElementById("mobileMenu");
-    const navLinks = document.querySelectorAll(".nav-menu a");
-    const sections = document.querySelectorAll("main section[id]");
+  const filtered = products.filter(product => {
+    const matchKeyword =
+      product.name.toLowerCase().includes(keyword) ||
+      product.spec.toLowerCase().includes(keyword) ||
+      product.description.toLowerCase().includes(keyword);
 
-    function formatPrice(price) {
-      return "HK$" + price.toLocaleString("en-HK");
-    }
+    const matchCategory =
+      selectedCategory === "全部" ||
+      product.category === selectedCategory;
 
-    function initCategories() {
-      const categories = ["全部", ...new Set(products.map((p) => p.category))];
-      categoryFilter.innerHTML = categories
-        .map((cat) => `<option value="${cat}">${cat === "全部" ? "全部分類" : cat}</option>`)
-        .join("");
-    }
+    return matchKeyword && matchCategory;
+  });
 
-    function renderProducts() {
-      const keyword = searchInput.value.trim().toLowerCase();
-      const selectedCategory = categoryFilter.value;
+  if (filtered.length === 0) {
+    productsGrid.innerHTML = `<div class="card"><p>找不到相關產品。</p></div>`;
+    return;
+  }
 
-      const filtered = products.filter((product) => {
-        const matchKeyword =
-          product.name.toLowerCase().includes(keyword) ||
-          product.spec.toLowerCase().includes(keyword) ||
-          product.description.toLowerCase().includes(keyword) ||
-          product.category.toLowerCase().includes(keyword);
+  productsGrid.innerHTML = filtered.map(product => `
+    <article class="product-card">
+      <div class="product-image-wrap">
+        <img class="product-image"
+             src="${product.image}"
+             alt="${product.name}"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="product-fallback">${product.imageText || "藥"}</div>
+      </div>
+      <div class="product-body">
+        <span class="product-category">${product.category}</span>
+        <h3 class="product-title">${product.name}</h3>
+        <span class="product-spec">${product.spec}</span>
+        <p class="product-desc">${product.description}</p>
+        <div class="product-price">${formatPrice(product.price)}</div>
+        <button class="btn btn-primary" onclick="addToCart(${product.id})">加入購物車</button>
+      </div>
+    </article>
+  `).join("");
+}
 
-        const matchCategory =
-          selectedCategory === "全部" ||
-          selectedCategory === "全部分類" ||
-          product.category === selectedCategory;
+/* =========================
+   購物車功能
+========================= */
+function addToCart(id) {
+  const existing = cart.find(item => item.id === id);
+  if (existing) {
+    existing.qty += 1;
+  } else {
+    const product = products.find(p => p.id === id);
+    cart.push({ ...product, qty: 1 });
+  }
+  renderCart();
+}
 
-        return matchKeyword && matchCategory;
-      });
+function changeQty(id, delta) {
+  const item = cart.find(p => p.id === id);
+  if (!item) return;
 
-      if (filtered.length === 0) {
-        productsGrid.innerHTML = `
-          <div class="card" style="grid-column: 1 / -1;">
-            <p style="margin: 0;">找不到相關產品。</p>
-          </div>
-        `;
-        return;
-      }
+  item.qty += delta;
+  if (item.qty <= 0) {
+    cart = cart.filter(p => p.id !== id);
+  }
+  renderCart();
+}
 
-      productsGrid.innerHTML = filtered.map((product) => `
-        <article class="product-card">
-          <div class="product-image-wrap">
-            <img
-              class="product-image"
-              src="${product.image}"
-              alt="${product.name}"
-              loading="lazy"
-              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-            />
-            <div class="product-fallback">${product.imageText || "藥"}</div>
-          </div>
-          <div class="product-body">
-            <span class="product-category">${product.category}</span>
-            <h3 class="product-title">${product.name}</h3>
-            <span class="product-spec">${product.spec}</span>
-            <p class="product-desc">${product.description}</p>
-            <div class="product-price">${formatPrice(product.price)}</div>
-            <div class="product-actions">
-              <button class="btn btn-primary" onclick="addToCart(${product.id})">加入購物車</button>
-            </div>
-          </div>
-        </article>
-      `).join("");
-    }
+function removeItem(id) {
+  cart = cart.filter(p => p.id !== id);
+  renderCart();
+}
 
-    function addToCart(productId) {
-      const existing = cart.find((item) => item.id === productId);
-      if (existing) {
-        existing.qty += 1;
-      } else {
-        const product = products.find((p) => p.id === productId);
-        cart.push({ ...product, qty: 1 });
-      }
-      renderCart();
-      showMessage("已加入購物車");
-    }
+function renderCart() {
+  if (cart.length === 0) {
+    cartContainer.innerHTML = `<p class="cart-empty">你尚未加入任何產品。</p>`;
+  } else {
+    cartContainer.innerHTML = cart.map(item => `
+      <div class="cart-item">
+        <p><strong>${item.name}</strong></p>
+        <p>${item.spec}</p>
+        <p>${formatPrice(item.price)} x ${item.qty}</p>
+        <button onclick="changeQty(${item.id},1)">+</button>
+        <button onclick="changeQty(${item.id},-1)">-</button>
+        <button onclick="removeItem(${item.id})">刪除</button>
+      </div>
+    `).join("");
+  }
 
-    function changeQty(productId, delta) {
-      const item = cart.find((p) => p.id === productId);
-      if (!item) return;
+  const itemCount = cart.reduce((sum, item) => sum + item.qty, 0);
+  const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
 
-      item.qty += delta;
-      if (item.qty <= 0) {
-        cart = cart.filter((p) => p.id !== productId);
-      }
-      renderCart();
-    }
+  cartCount.textContent = `${itemCount} 件`;
+  navCartCount.textContent = itemCount;
+  if (mobileCartCount) mobileCartCount.textContent = itemCount;
+  subtotalEl.textContent = formatPrice(total);
+  totalEl.textContent = formatPrice(total);
+  itemCountEl.textContent = itemCount;
+}
 
-    function removeItem(productId) {
-      cart = cart.filter((p) => p.id !== productId);
-      renderCart();
-    }
+/* =========================
+   WhatsApp 下單
+========================= */
+function checkoutWhatsApp() {
+  if (cart.length === 0) {
+    window.open(`https://wa.me/${whatsappNumber}`, "_blank");
+    return;
+  }
 
-    function renderCart() {
-      if (cart.length === 0) {
-        cartContainer.innerHTML = '<p class="cart-empty">你尚未加入任何產品。</p>';
-      } else {
-        cartContainer.innerHTML = `
-          <div class="cart-items">
-            ${cart.map((item) => `
-              <div class="cart-item">
-                <div class="cart-item-top">
-                  <div>
-                    <p class="cart-item-name">${item.name}</p>
-                    <div class="cart-item-spec">${item.spec}</div>
-                    <div class="cart-item-meta">${formatPrice(item.price)} × ${item.qty} = ${formatPrice(item.price * item.qty)}</div>
-                  </div>
-                  <button class="remove-btn" onclick="removeItem(${item.id})">刪除</button>
-                </div>
-                <div class="qty-controls">
-                  <button class="qty-btn" onclick="changeQty(${item.id}, -1)">-</button>
-                  <span class="qty-number">${item.qty}</span>
-                  <button class="qty-btn" onclick="changeQty(${item.id}, 1)">+</button>
-                </div>
-              </div>
-            `).join("")}
-          </div>
-        `;
-      }
+  const message = cart.map((item, i) =>
+    `${i+1}. ${item.name} (${item.spec}) x ${item.qty}`
+  ).join("\n");
 
-      const itemCount = cart.reduce((sum, item) => sum + item.qty, 0);
-      const subtotal = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+  window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank");
+}
 
-      cartCount.textContent = `${itemCount} 件`;
-      navCartCount.textContent = itemCount;
-      if (mobileCartCount) mobileCartCount.textContent = itemCount;
-      itemCountEl.textContent = itemCount;
-      subtotalEl.textContent = formatPrice(subtotal);
-      totalEl.textContent = formatPrice(subtotal);
-    }
+/* =========================
+   事件監聽
+========================= */
+searchInput.addEventListener("input", renderProducts);
+categoryFilter.addEventListener("change", renderProducts);
 
-    function checkoutWhatsApp() {
-      if (cart.length === 0) {
-        const defaultMessage = "你好，我想查詢彩雲國貨有限公司的產品 / 中醫服務。";
-        const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(defaultMessage)}`;
-        window.open(url, "_blank");
-        return;
-      }
+/* =========================
+   初始化
+========================= */
+initCategories();
+renderCategories();
+renderCart();
 
-      const customerName = document.getElementById("customerName").value.trim();
-      const customerPhone = document.getElementById("customerPhone").value.trim();
-      const customerNote = document.getElementById("customerNote").value.trim();
-
-      const itemLines = cart.map((item, index) => {
-        const lineTotal = item.price * item.qty;
-        return `${index + 1}. ${item.name}（${item.spec}）x ${item.qty} - ${formatPrice(lineTotal)}`;
-      }).join("\n");
-
-      const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
-
-      const message =
-`你好，我想查詢 / 訂購以下產品：
-
-${itemLines}
-
-總額：${formatPrice(total)}
-
-姓名：${customerName || "未提供"}
-電話：${customerPhone || "未提供"}
-備註：${customerNote || "無"}
-
-麻煩確認存貨、規格及安排，謝謝。`;
-
-      const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-      window.open(url, "_blank");
-    }
-
-    function scrollToProducts() {
-      const shop = document.getElementById("shop");
-      if (shop) shop.scrollIntoView({ behavior: "smooth" });
-    }
-
-    function showMessage(text) {
-      const existing = document.getElementById("siteMessage");
-      if (existing) existing.remove();
-
-      const box = document.createElement("div");
-      box.id = "siteMessage";
-      box.textContent = text;
-      box.style.position = "fixed";
-      box.style.left = "50%";
-      box.style.bottom = "84px";
-      box.style.transform = "translateX(-50%)";
-      box.style.background = "#17382b";
-      box.style.color = "#fff";
-      box.style.padding = "12px 16px";
-      box.style.borderRadius = "12px";
-      box.style.boxShadow = "0 10px 24px rgba(0,0,0,0.18)";
-      box.style.zIndex = "9999";
-      box.style.fontSize = "14px";
-      document.body.appendChild(box);
-
-      setTimeout(() => {
-        box.remove();
-      }, 1800);
-    }
-
-    function toggleMobileMenu() {
-      if (!menuToggle || !mobileMenu) return;
-      const isOpen = mobileMenu.classList.toggle("open");
-      menuToggle.setAttribute("aria-expanded", String(isOpen));
-      menuToggle.innerHTML = isOpen
-        ? `<svg viewBox="0 0 24 24"><use href="#icon-close"></use></svg>`
-        : `<svg viewBox="0 0 24 24"><use href="#icon-menu"></use></svg>`;
-    }
-
-    function closeMobileMenu() {
-      if (!menuToggle || !mobileMenu) return;
-      mobileMenu.classList.remove("open");
-      menuToggle.setAttribute("aria-expanded", "false");
-      menuToggle.innerHTML = `<svg viewBox="0 0 24 24"><use href="#icon-menu"></use></svg>`;
-    }
-
-    function updateActiveNav() {
-      const offset = 140;
-      let currentId = "home";
-
-      sections.forEach((section) => {
-        const top = section.offsetTop - offset;
-        if (window.scrollY >= top) {
-          currentId = section.id;
-        }
-      });
-
-      navLinks.forEach((link) => {
-        const href = link.getAttribute("href");
-        link.classList.toggle("active", href === `#${currentId}`);
-      });
-    }
-
-    searchInput.addEventListener("input", renderProducts);
-    categoryFilter.addEventListener("change", renderProducts);
-
-    if (menuToggle) {
-      menuToggle.addEventListener("click", toggleMobileMenu);
-    }
-
-    document.querySelectorAll(".mobile-nav-link").forEach((link) => {
-      link.addEventListener("click", closeMobileMenu);
-    });
-
-    window.addEventListener("scroll", updateActiveNav);
-    window.addEventListener("resize", () => {
-      if (window.innerWidth > 1080) {
-        closeMobileMenu();
-      }
-    });
-
-    initCategories();
-    renderCategories();
-    renderCart();
-    updateActiveNav();
-
-    window.addToCart = addToCart;
-    window.changeQty = changeQty;
-    window.removeItem = removeItem;
-    window.checkoutWhatsApp = checkoutWhatsApp;
-    window.scrollToProducts = scrollToProducts;
-  </script>
+window.addToCart = addToCart;
+window.changeQty = changeQty;
+window.removeItem = removeItem;
+window.showCategories = showCategories;
+window.showProductsByCategory = showProductsByCategory;
+window.checkoutWhatsApp = checkoutWhatsApp;
+</script>
 </body>
 </html>
