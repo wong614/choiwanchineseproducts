@@ -1409,22 +1409,65 @@
         display: none;
       }
     }
-    .category-grid {
+.category-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 20px;
 }
 
 .category-card {
-  background: rgba(255,255,255,0.9);
+  position: relative;
+  background: linear-gradient(135deg, #ffffff 0%, #f6f1e8 100%);
   border: 1px solid var(--border);
   border-radius: 22px;
-  padding: 30px;
+  padding: 28px 20px;
   text-align: center;
   font-weight: 800;
+  font-size: 18px;
+  color: var(--green);
   cursor: pointer;
   box-shadow: var(--shadow-sm);
-  transition: 0.25s ease;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+/* 金色邊框光暈 */
+.category-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 22px;
+  padding: 1px;
+  background: linear-gradient(135deg, var(--gold), var(--green));
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+/* hover 效果 */
+.category-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  color: var(--green-dark);
+}
+
+.category-card:hover::before {
+  opacity: 1;
+}
+
+/* active 狀態 */
+.category-card.active {
+  background: linear-gradient(135deg, var(--green) 0%, var(--green-soft) 100%);
+  color: white;
+  box-shadow: 0 18px 40px rgba(31,77,58,0.25);
+}
+
+.category-card.active::before {
+  opacity: 0;
 }
 
 .category-card:hover {
@@ -2629,8 +2672,10 @@ function renderCategories() {
   const categories = [...new Set(products.map(p => p.category))];
 
   categoryView.innerHTML = categories.map(cat => `
-    <div class="category-card" onclick="showProductsByCategory('${cat}')">
-      ${cat}
+    <div class="category-card" data-category="${cat}"
+         onclick="showProductsByCategory('${cat}')">
+      <div class="category-icon">💊</div>
+      <div class="category-name">${cat}</div>
     </div>
   `).join("");
 
@@ -2640,6 +2685,14 @@ function renderCategories() {
 
 function showProductsByCategory(category) {
   categoryFilter.value = category;
+
+  document.querySelectorAll(".category-card").forEach(card => {
+    card.classList.remove("active");
+    if (card.dataset.category === category) {
+      card.classList.add("active");
+    }
+  });
+
   renderProducts();
   categoryView.style.display = "none";
   productView.style.display = "block";
