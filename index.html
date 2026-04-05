@@ -2694,12 +2694,16 @@ function showProductsByCategory(category) {
   });
 
   renderProducts();
-  categoryView.style.display = "none";
+
   productView.style.display = "block";
+
+  document.getElementById("productsGrid").scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
 }
 
 function showCategories() {
-  productView.style.display = "none";
   categoryView.style.display = "grid";
 }
 
