@@ -2088,7 +2088,7 @@
 
           <details>
             <summary>營業時間是什麼？</summary>
-            <p>營業時間為每日 09:15 - 7:00。</p>
+            <p>營業時間為每日 09:15 - 19:00。</p>
           </details>
 
           <details>
@@ -2797,6 +2797,39 @@ function scrollToProducts() {
     behavior: "smooth"
   });
 }
+  /* =========================
+   Mobile Menu Toggle
+========================= */
+const menuToggle = document.getElementById("menuToggle");
+const mobileMenu = document.getElementById("mobileMenu");
+
+if (menuToggle && mobileMenu) {
+  menuToggle.addEventListener("click", () => {
+    mobileMenu.classList.toggle("open");
+
+    const isOpen = mobileMenu.classList.contains("open");
+    menuToggle.setAttribute("aria-expanded", isOpen);
+
+    // 切換 icon
+    menuToggle.innerHTML = `
+      <svg viewBox="0 0 24 24">
+        <use href="${isOpen ? '#icon-close' : '#icon-menu'}"></use>
+      </svg>
+    `;
+  });
+}
+  document.querySelectorAll(".mobile-nav-link").forEach(link => {
+  link.addEventListener("click", () => {
+    mobileMenu.classList.remove("open");
+    menuToggle.setAttribute("aria-expanded", "false");
+
+    menuToggle.innerHTML = `
+      <svg viewBox="0 0 24 24">
+        <use href="#icon-menu"></use>
+      </svg>
+    `;
+  });
+});
 </script>
 </body>
 </html>
