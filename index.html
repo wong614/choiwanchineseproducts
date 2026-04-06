@@ -1479,6 +1479,36 @@
 .back-btn {
   margin-bottom: 20px;
 }
+    /* Image Modal */
+.image-modal {
+  display: none;
+  position: fixed;
+  z-index: 3000;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.85);
+}
+
+.modal-content {
+  display: block;
+  margin: auto;
+  max-width: 90%;
+  max-height: 80vh;
+  border-radius: 10px;
+}
+
+.close-modal {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
   </style>
 </head>
 <body>
@@ -2887,6 +2917,45 @@ if (menuToggle && mobileMenu) {
     `;
   });
 });
+  /* =========================
+   圖片放大 Lightbox 功能
+========================= */
+
+const imageModal = document.getElementById("imageModal");
+const modalImage = document.getElementById("modalImage");
+const closeModal = document.querySelector(".close-modal");
+
+// 使用事件代理（因為產品是動態 render）
+document.addEventListener("click", function(e) {
+  if (e.target.classList.contains("product-image")) {
+    modalImage.src = e.target.src;
+    imageModal.style.display = "block";
+  }
+});
+
+// 點擊 X 關閉
+closeModal.addEventListener("click", function() {
+  imageModal.style.display = "none";
+});
+
+// 點擊黑色背景關閉
+imageModal.addEventListener("click", function(e) {
+  if (e.target === imageModal) {
+    imageModal.style.display = "none";
+  }
+});
+
+// ESC 鍵關閉
+document.addEventListener("keydown", function(e) {
+  if (e.key === "Escape") {
+    imageModal.style.display = "none";
+  }
+});
 </script>
+  <!-- Image Modal -->
+<div id="imageModal" class="image-modal">
+  <span class="close-modal">&times;</span>
+  <img class="modal-content" id="modalImage">
+</div>
 </body>
 </html>
