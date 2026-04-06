@@ -2917,7 +2917,7 @@ if (menuToggle && mobileMenu) {
     `;
   });
 });
-  /* =========================
+ /* =========================
    圖片放大 Lightbox 功能
 ========================= */
 
@@ -2930,6 +2930,7 @@ document.addEventListener("click", function(e) {
   if (e.target.classList.contains("product-image")) {
     modalImage.src = e.target.src;
     imageModal.style.display = "block";
+    document.body.style.overflow = "hidden"; // 鎖定背景滾動
   }
 });
 
@@ -2937,22 +2938,25 @@ document.addEventListener("click", function(e) {
 if (closeModal) {
   closeModal.addEventListener("click", function() {
     imageModal.style.display = "none";
+    document.body.style.overflow = "";
   });
 }
-  imageModal.style.display = "none";
-});
 
 // 點擊黑色背景關閉
-imageModal.addEventListener("click", function(e) {
-  if (e.target === imageModal) {
-    imageModal.style.display = "none";
-  }
-});
+if (imageModal) {
+  imageModal.addEventListener("click", function(e) {
+    if (e.target === imageModal) {
+      imageModal.style.display = "none";
+      document.body.style.overflow = "";
+    }
+  });
+}
 
 // ESC 鍵關閉
 document.addEventListener("keydown", function(e) {
   if (e.key === "Escape") {
     imageModal.style.display = "none";
+    document.body.style.overflow = "";
   }
 });
 </script>
