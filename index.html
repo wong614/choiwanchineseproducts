@@ -2934,7 +2934,11 @@ document.addEventListener("click", function(e) {
 });
 
 // 點擊 X 關閉
-closeModal.addEventListener("click", function() {
+if (closeModal) {
+  closeModal.addEventListener("click", function() {
+    imageModal.style.display = "none";
+  });
+}
   imageModal.style.display = "none";
 });
 
