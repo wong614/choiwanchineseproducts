@@ -12,7 +12,7 @@
   <meta property="og:description" content="老字號在地經營，提供中藥、中成藥、參茸海味及中醫師駐診服務，現場及預約皆可，支援產品圖片、規格、價格展示及 WhatsApp 查詢下單。" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://wong614.github.io/choiwanchineseproducts/" />
-  <meta property="og:image" content="https://yourdomain.com/preview.jpg">
+  <meta property="og:image" content="https://wong614.github.io/choiwanchineseproducts/preview.jpg">
   <meta property="og:site_name" content="彩雲國貨有限公司">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
 
@@ -1562,7 +1562,130 @@
     font-size: clamp(34px, 8vw, 48px);
   }
 }
+    /* ===== 醫師雙欄排版 ===== */
+
+.doctor-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+@media (max-width: 768px) {
+  .doctor-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.doctor-card {
+  background: white;
+  border-radius: 22px;
+  padding: 26px;
+  box-shadow: 0 18px 45px rgba(0,0,0,0.08);
+  border-left: 6px solid var(--green);
+  transition: 0.3s ease;
+}
+
+.doctor-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 55px rgba(0,0,0,0.12);
+}
+
+.doctor-header {
+  margin-bottom: 12px;
+}
+
+.doctor-name {
+  margin: 0;
+  font-size: 20px;
+}
+
+.doctor-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-soft);
+}
+
+.doctor-desc {
+  font-size: 14px;
+  color: var(--text-soft);
+  margin: 14px 0;
+}
+
+.doctor-specialty {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 18px;
+  font-size: 14px;
+  color: var(--text-soft);
+}
+
+.doctor-specialty li {
+  margin-bottom: 6px;
+}
+
+/* 出診時間 */
+
+.doctor-schedule {
+  background: rgba(31,77,58,0.06);
+  border-radius: 16px;
+  padding: 14px 16px;
+  margin-bottom: 18px;
+}
+
+.schedule-title {
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.schedule-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: var(--text-soft);
+}
+
+.doctor-cta {
+  margin-top: 10px;
+}
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "name": "彩雲國貨有限公司",
+  "image": "https://wong614.github.io/choiwanchineseproducts/preview.jpg",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "彩雲一邨二期街市3號鋪",
+    "addressCountry": "HK"
+  },
+  "telephone": "+85227505710",
+  "openingHours": "Mo-Su 09:15-19:00",
+  "areaServed": "Hong Kong"
+}
+</script>
   </style>
+  </style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "name": "彩雲國貨有限公司",
+  "image": "https://wong614.github.io/choiwanchineseproducts/preview.jpg",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "彩雲一邨二期街市3號鋪",
+    "addressCountry": "HK"
+  },
+  "telephone": "+85227505710",
+  "openingHours": "Mo-Su 09:15-19:00",
+  "areaServed": "Hong Kong"
+}
+</script>
+
+</head>
 </head>
 <body>
   <svg xmlns="http://www.w3.org/2000/svg" style="display: none;" aria-hidden="true">
@@ -2049,15 +2172,86 @@
           </p>
         </div>
 
-        <div class="clinic-grid">
-          <div class="card">
-            <p>
-              彩雲國貨有限公司設有中醫師駐診，方便有需要人士查詢中醫相關服務。無論你是希望了解日常保養、體質調理，或針對婦科、兒科、失眠、腸胃、轉骨等方向作進一步了解，都可先與我們聯絡。
-            </p>
-            <p>
-              我們提供現場及預約制安排，讓不同時間需求的顧客都能較靈活地作出安排。建議你可先致電或透過 WhatsApp 查詢，以便了解合適時段與服務方式。
-            </p>
-          </div>
+        <div class="doctor-grid">
+
+  <!-- 醫師 1 -->
+  <div class="doctor-card">
+    
+    <div class="doctor-header">
+      <h3 class="doctor-name">陳瑞儀 註冊女醫師</h3>
+      <div class="doctor-title">香港註冊中醫師</div>
+    </div>
+
+    <p class="doctor-desc">
+      專注體質調理、腸胃問題及失眠改善，
+      重視辨證施治與整體體質平衡。
+    </p>
+
+    <ul class="doctor-specialty">
+      <li>婦科調理</li>
+      <li>腸胃功能改善</li>
+      <li>失眠與壓力調整</li>
+    </ul>
+
+    <div class="doctor-schedule">
+      <div class="schedule-title">固定出診時間</div>
+      <div class="schedule-row">
+        <span>星期一、三、五</span>
+        <span>09:30 – 19:00</span>
+      </div>
+      <div class="schedule-row">
+        <span>星期二、四</span>
+        <span>09:30 – 13:30</span>
+      </div>
+      <div class="schedule-row">
+        <span>星期日</span>
+        <span>10:00 – 18:00</span>
+      </div>
+    </div>
+
+    <div class="doctor-cta">
+      <a href="tel:27505710" class="btn btn-primary">預約陳醫師</a>
+    </div>
+  </div>
+
+
+  <!-- 醫師 2 -->
+  <div class="doctor-card">
+    
+    <div class="doctor-header">
+      <h3 class="doctor-name">石錦蓮 註冊女醫師</h3>
+      <div class="doctor-title">香港註冊中醫師</div>
+    </div>
+
+    <p class="doctor-desc">
+      專注痛症管理，
+      擅長針灸治療。
+    </p>
+
+    <ul class="doctor-specialty">
+      <li>針灸治療</li>
+      <li>痛症管理</li>
+      <li>髗骶治療</li>
+    </ul>
+
+    <div class="doctor-schedule">
+      <div class="schedule-title">固定出診時間</div>
+      <div class="schedule-row">
+        <span>星期二、四</span>
+        <span>14:00 – 18:00</span>
+      </div>
+      <div class="schedule-row">
+        <span>星期六</span>
+        <span>10:00 – 18:00</span>
+      </div>
+    </div>
+
+    <div class="doctor-cta">
+      <a href="tel:27505710" class="btn btn-primary">預約石醫師</a>
+    </div>
+  </div>
+
+</div>
 
           <div class="card">
             <h3>溫馨提示</h3>
@@ -3043,6 +3237,7 @@ function showProductsByCategory(category) {
 
 function showCategories() {
   categoryView.style.display = "grid";
+  productView.style.display = "none";
 }
 
 /* =========================
@@ -3173,12 +3368,30 @@ function checkoutWhatsApp() {
     return;
   }
 
-  const message = cart.map((item, i) =>
-    `${i+1}. ${item.name} (${item.spec}) x ${item.qty}`
-  ).join("\n");
+  const customerName = document.getElementById("customerName").value;
+  const customerPhone = document.getElementById("customerPhone").value;
+  const customerNote = document.getElementById("customerNote").value;
+
+  let message = "【彩雲國貨有限公司 訂單查詢】\n\n";
+
+  if (customerName) message += "姓名：" + customerName + "\n";
+  if (customerPhone) message += "電話：" + customerPhone + "\n";
+
+  message += "\n產品清單：\n";
+
+  cart.forEach((item, i) => {
+    message += `${i+1}. ${item.name} (${item.spec}) x ${item.qty}\n`;
+  });
+
+  if (customerNote) {
+    message += "\n備註：" + customerNote + "\n";
+  }
+
+  message += "\n（最終價格及存貨以店舖確認為準）";
 
   window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank");
 }
+
 
 /* =========================
    事件監聽
