@@ -3103,6 +3103,12 @@ function addToCart(id) {
     cart.push({ ...product, qty: 1 });
   }
   renderCart();
+
+  // 滾動到購物車
+  document.querySelector(".cart-panel").scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
 }
 
 function changeQty(id, delta) {
