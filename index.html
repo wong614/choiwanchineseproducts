@@ -12,6 +12,9 @@
   <meta property="og:description" content="老字號在地經營，提供中藥、中成藥、參茸海味及中醫師駐診服務，現場及預約皆可，支援產品圖片、規格、價格展示及 WhatsApp 查詢下單。" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://maps.app.goo.gl/rowmVyGq5wBjGCpk8" />
+  <meta property="og:image" content="https://yourdomain.com/preview.jpg">
+  <meta property="og:site_name" content="彩雲國貨有限公司">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -52,16 +55,16 @@
     }
 
     body {
-      margin: 0;
-      font-family: Arial, "PingFang TC", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at top right, rgba(198, 146, 60, 0.08), transparent 24%),
-        radial-gradient(circle at left top, rgba(31, 77, 58, 0.05), transparent 28%),
-        linear-gradient(180deg, #fcfbf8 0%, #f5efe6 100%);
-      line-height: 1.75;
-      letter-spacing: 0.01em;
-    }
+  margin: 0;
+  font-family: "Noto Serif TC", "PingFang TC", serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top right, rgba(198, 146, 60, 0.08), transparent 24%),
+    radial-gradient(circle at left top, rgba(31, 77, 58, 0.05), transparent 28%),
+    linear-gradient(180deg, #fcfbf8 0%, #f5efe6 100%);
+  line-height: 1.75;
+  letter-spacing: 0.01em;
+}
 
     a {
       color: inherit;
@@ -115,9 +118,10 @@
 }
 
     .navbar {
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  background: rgba(255,255,255,0.92);
+  border-bottom: 1px solid rgba(198,187,164,0.3);
 }
 
     .nav-inner {
@@ -1846,6 +1850,10 @@
     <section class="section" id="shop">
       <div class="container">
         <div class="section-head">
+          <div class="shop-trust-bar">
+  <strong>專業提示：</strong>
+  所有產品由店舖把關品質，最終規格、份量及使用建議可到店或透過 WhatsApp 查詢確認。
+</div>
           <div class="section-kicker">Shop</div>
           <h2>產品選購｜真圖片・規格・價格展示・WhatsApp 購物車</h2>
           <p class="section-desc">
@@ -3119,12 +3127,20 @@ function renderCart() {
   } else {
     cartContainer.innerHTML = cart.map(item => `
       <div class="cart-item">
-        <p><strong>${item.name}</strong></p>
-        <p>${item.spec}</p>
-        <p>${formatPrice(item.price)} x ${item.qty}</p>
-        <button onclick="changeQty(${item.id},1)">+</button>
-        <button onclick="changeQty(${item.id},-1)">-</button>
-        <button onclick="removeItem(${item.id})">刪除</button>
+        <div class="cart-item-top">
+          <div>
+            <p class="cart-item-name">${item.name}</p>
+            <span class="cart-item-spec">${item.spec}</span>
+            <div class="cart-item-meta">${formatPrice(item.price)} x ${item.qty}</div>
+          </div>
+          <button class="remove-btn" onclick="removeItem(${item.id})">刪除</button>
+        </div>
+
+        <div class="qty-controls">
+          <button class="qty-btn" onclick="changeQty(${item.id},-1)">−</button>
+          <span class="qty-number">${item.qty}</span>
+          <button class="qty-btn" onclick="changeQty(${item.id},1)">＋</button>
+        </div>
       </div>
     `).join("");
   }
