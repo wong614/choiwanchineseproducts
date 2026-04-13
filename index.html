@@ -108,23 +108,17 @@
     }
 
     .navbar-wrap {
-      position: sticky;
-      top: 10px;
-      z-index: 1000;
-      padding-top: 12px;
-    }
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding-top: 0;
+}
 
     .navbar {
-      width: calc(100% - 16px);
-      max-width: calc(var(--max) + 16px);
-      margin: 0 auto;
-      background: rgba(252, 251, 248, 0.82);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(230, 223, 208, 0.75);
-      border-radius: 22px;
-      box-shadow: var(--shadow);
-    }
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(255,255,255,0.85);
+}
 
     .nav-inner {
       display: flex;
@@ -256,14 +250,15 @@
     }
 
     .mobile-menu {
-      display: none;
-      border-top: 1px solid rgba(230, 223, 208, 0.8);
-      padding: 8px 14px 16px;
-    }
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.3s ease;
+  }
 
-    .mobile-menu.open {
-      display: block;
-    }
+.mobile-menu.open {
+  max-height: 600px;
+  padding-bottom: 16px;
+  }
 
     .mobile-menu-links {
       display: grid;
@@ -761,7 +756,7 @@
     }
 
     summary::-webkit-details-marker {
-      display: none;
+      
     }
 
     summary::after {
@@ -1328,81 +1323,78 @@
     }
 
     @media (max-width: 720px) {
-      .section {
-        padding: 58px 0;
-      }
 
-      .hero {
-        padding-top: 44px;
-      }
+  .navbar-wrap {
+    top: 0;
+    padding-top: 0;
+  }
 
-      .grid-3,
-      .grid-4,
-      .features-grid,
-      .process-grid,
-      .testimonial-grid,
-      .products-grid {
-        grid-template-columns: 1fr;
-      }
+  .hero {
+    padding-top: 44px;
+  }
 
-      .nav-cta .desktop-only {
-        display: none;
-      }
+  .grid-3,
+  .grid-4,
+  .features-grid,
+  .process-grid,
+  .testimonial-grid,
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
 
-      .mobile-only {
-        display: inline-flex;
-      }
+  .nav-cta .desktop-only {
+    display: none;
+  }
 
-      .brand-sub {
-        display: none;
-      }
+  .mobile-only {
+    display: inline-flex;
+  }
 
-      .topbar-inner {
-        font-size: 12px;
-      }
+  .brand-sub {
+    display: none;
+  }
 
-      .footer {
-        padding-bottom: 96px;
-      }
+  .topbar-inner {
+    font-size: 12px;
+  }
 
-      .navbar-wrap {
-        top: 8px;
-        padding-top: 8px;
-      }
+  .footer {
+    padding-bottom: 96px;
+  }
 
-      .navbar {
-        border-radius: 18px;
-      }
+  .navbar {
+    border-radius: 0 0 18px 18px;
+  }
 
-      .nav-inner {
-        min-height: 64px;
-        padding: 0 14px;
-      }
+  .nav-inner {
+    min-height: 64px;
+    padding: 0 14px;
+  }
 
-      h1 {
-        font-size: clamp(30px, 8vw, 42px);
-      }
+  h1 {
+    font-size: clamp(30px, 8vw, 42px);
+  }
 
-      .hero p.lead {
-        font-size: 16px;
-      }
+  .hero p.lead {
+    font-size: 16px;
+  }
 
-      .card,
-      .hero-card,
-      .process-step,
-      details {
-        border-radius: 18px;
-      }
+  .card,
+  .hero-card,
+  .process-step,
+  details {
+    border-radius: 18px;
+  }
 
-      .hero-photo {
-        min-height: 220px;
-        padding: 22px;
-      }
+  .hero-photo {
+    min-height: 220px;
+    padding: 22px;
+  }
 
-      .hero-photo-title {
-        font-size: 24px;
-      }
-    }
+  .hero-photo-title {
+    font-size: 24px;
+  }
+}
 
     @media (min-width: 769px) {
       .mobile-fixed-bar {
@@ -1508,6 +1500,24 @@
   font-size: 40px;
   font-weight: bold;
   cursor: pointer;
+}
+    /* ===== Scroll Shrink Effect ===== */
+
+.navbar {
+  transition: all 0.25s ease;
+}
+
+.navbar.shrink {
+  box-shadow: 0 12px 30px rgba(16,39,30,0.18);
+}
+
+.navbar.shrink .nav-inner {
+  min-height: 60px;
+}
+
+.navbar.shrink .brand-mark {
+  width: 36px;
+  height: 36px;
 }
   </style>
 </head>
@@ -3267,6 +3277,18 @@ document.addEventListener("keydown", function(e) {
   if (e.key === "Escape") {
     imageModal.style.display = "none";
     document.body.style.overflow = "";
+  }
+});
+  /* =========================
+   Scroll Shrink Navbar
+========================= */
+const navbar = document.querySelector(".navbar");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 40) {
+    navbar.classList.add("shrink");
+  } else {
+    navbar.classList.remove("shrink");
   }
 });
 </script>
